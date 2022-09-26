@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - floor
+  - Seize
+  - Impassable
+  - Passable
   layers:
   - Default
   - TransparentFX
