@@ -1,0 +1,584 @@
+{ "pid": 0, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "BeeDriver" } },
+{ "pid": 0, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-2" } },
+{ "pid": 0, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
+{ "pid": 0, "tid": 1, "ts": 1664310656000933, "dur": 638266, "ph": "X", "name": "Build Player", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1664310656001208, "dur": 16746, "ph": "X", "name": "WriteBuildProgramData", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1664310656017970, "dur": 50159, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1664310656068131, "dur": 293824, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1664310656361957, "dur": 265204, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1664310656627162, "dur": 12037, "ph": "X", "name": "Finish", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1664310656639809, "dur": 13, "ph": "X", "name": "", "args": {} },
+{ "pid": 35942, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "netcorerun.dll" } },
+{ "pid": 35942, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-1" } },
+{ "pid": 35942, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
+{ "pid": 35942, "tid": 1, "ts": 1664310656239002, "dur": 108247, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1664310656239948, "dur": 41862, "ph": "X", "name": "BuildProgramContextConstructor", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1664310656331873, "dur": 4260, "ph": "X", "name": "OutputData.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1664310656336135, "dur": 11108, "ph": "X", "name": "Backend.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1664310656336791, "dur": 9650, "ph": "X", "name": "JsonToString", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1664310656351711, "dur": 1217, "ph": "X", "name": "", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1664310656350995, "dur": 1955, "ph": "X", "name": "Write chrome-trace events", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1664310656639875, "dur": 297, "ph": "X", "name": "buildprogram0.traceevents", "args": {} },
+{ "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
+,{ "pid":12345, "tid":0, "ts":1664310656418358, "dur":3486, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656421855, "dur":317, "ph":"X", "name": "Tundra",  "args": { "detail":"RemoveStaleOutputs" }}
+,{ "pid":12345, "tid":0, "ts":1664310656422325, "dur":87, "ph":"X", "name": "Tundra",  "args": { "detail":"PrepareNodes" }}
+,{ "pid":12345, "tid":0, "ts":1664310656422414, "dur":637, "ph":"X", "name": "Tundra",  "args": { "detail":"BuildQueueInit" }}
+,{ "pid":12345, "tid":0, "ts":1664310656423084, "dur":863, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656423947, "dur":2, "ph":"X", "name": "SortWorkingStack",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588414, "dur":234, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588648, "dur":10, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588658, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588660, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588666, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588668, "dur":4, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588672, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588674, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588679, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588681, "dur":4, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588685, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588687, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588692, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588694, "dur":9, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588703, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588705, "dur":4, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588709, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588711, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588716, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588718, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588723, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588725, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588730, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588732, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588737, "dur":0, "ph":"X", "name": "SharedResourceDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588754, "dur":2, "ph":"X", "name": "BuildQueueDestroyTail",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656588773, "dur":8865, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1664310656424402, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1664310656424403, "dur":9720, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1664310656434137, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1664310656434143, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1664310656441528, "dur":4012, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1664310656445546, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1664310656445574, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1664310656445842, "dur":4093, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1664310656449936, "dur":2635, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":1, "ts":1664310656452575, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1664310656452582, "dur":1190, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":1, "ts":1664310656453835, "dur":29989, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":1, "ts":1664310656483827, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1664310656483834, "dur":8550, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":1, "ts":1664310656492462, "dur":1180, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1664310656493647, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1664310656493657, "dur":21298, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1664310656514967, "dur":353, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1664310656515323, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1664310656515329, "dur":3832, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1664310656519177, "dur":360, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Threading.dll" }}
+,{ "pid":12345, "tid":1, "ts":1664310656519542, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1664310656519547, "dur":4290, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Threading.dll" }}
+,{ "pid":12345, "tid":1, "ts":1664310656523848, "dur":246, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.InternalAPIEngineBridge.001.dll" }}
+,{ "pid":12345, "tid":1, "ts":1664310656524097, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1664310656524131, "dur":2134, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.InternalAPIEngineBridge.001.dll" }}
+,{ "pid":12345, "tid":1, "ts":1664310656526276, "dur":267, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.2D.SpriteShape.Runtime.dll" }}
+,{ "pid":12345, "tid":1, "ts":1664310656526546, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1664310656526552, "dur":3369, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.2D.SpriteShape.Runtime.dll" }}
+,{ "pid":12345, "tid":1, "ts":1664310656529941, "dur":201, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Runtime.dll" }}
+,{ "pid":12345, "tid":1, "ts":1664310656530145, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1664310656530150, "dur":1547, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Runtime.dll" }}
+,{ "pid":12345, "tid":1, "ts":1664310656531708, "dur":2662, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":1, "ts":1664310656534373, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1664310656534378, "dur":4040, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":1, "ts":1664310656538434, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/resources.assets" }}
+,{ "pid":12345, "tid":1, "ts":1664310656538451, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1664310656538457, "dur":2090, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/resources.assets" }}
+,{ "pid":12345, "tid":1, "ts":1664310656540561, "dur":47868, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1664310656424586, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1664310656424587, "dur":12535, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1664310656437123, "dur":189, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":2, "ts":1664310656437316, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1664310656449396, "dur":23362, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":2, "ts":1664310656472817, "dur":755, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656473575, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1664310656473581, "dur":3679, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656477274, "dur":577, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656477855, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1664310656477868, "dur":4070, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656481954, "dur":1124, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656483081, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1664310656483117, "dur":2663, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656485791, "dur":655, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656486449, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1664310656486455, "dur":1722, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656488190, "dur":199, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656488392, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1664310656488398, "dur":1550, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656489959, "dur":458, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656490420, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1664310656490425, "dur":3695, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656494133, "dur":1419, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656495558, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1664310656495566, "dur":21700, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656517278, "dur":581, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656517862, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1664310656517868, "dur":3462, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656521344, "dur":311, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Internal.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656521658, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1664310656521664, "dur":4384, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Internal.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656526060, "dur":1523, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Burst.Cecil.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656527587, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1664310656527593, "dur":4900, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Burst.Cecil.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656532512, "dur":221, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656532737, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1664310656532743, "dur":2936, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656535694, "dur":8750, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Plugins/x86_64/lib_burst_generated.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656544449, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1664310656544929, "dur":904, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Plugins/x86_64/lib_burst_generated.dll" }}
+,{ "pid":12345, "tid":2, "ts":1664310656545849, "dur":42563, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656424659, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656424659, "dur":10327, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656434987, "dur":202, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":3, "ts":1664310656435193, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656446342, "dur":20794, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":3, "ts":1664310656467223, "dur":570, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656467797, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656467807, "dur":1120, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656468940, "dur":253, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656469196, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656469202, "dur":2539, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656471755, "dur":860, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656472620, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656472666, "dur":1960, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656474638, "dur":333, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656474974, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656474980, "dur":3589, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656478586, "dur":244, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656478833, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656478840, "dur":2465, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656481317, "dur":1459, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656482780, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656482790, "dur":2789, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656485594, "dur":554, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656486182, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656486189, "dur":1573, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656487777, "dur":464, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656488245, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656488252, "dur":1646, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656489911, "dur":229, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656490147, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656490155, "dur":23116, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656513307, "dur":1848, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656515158, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656515165, "dur":3991, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656519167, "dur":582, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656519782, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656519788, "dur":3755, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656523556, "dur":200, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Configuration.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656523759, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656523766, "dur":2644, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Configuration.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656526426, "dur":292, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.2D.IK.Runtime.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656526721, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656526726, "dur":2747, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.2D.IK.Runtime.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656529485, "dur":1195, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656530683, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656530689, "dur":3191, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656533892, "dur":459, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656534355, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656534361, "dur":2168, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":3, "ts":1664310656536542, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":3, "ts":1664310656536558, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656536574, "dur":1857, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":3, "ts":1664310656538445, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/level0" }}
+,{ "pid":12345, "tid":3, "ts":1664310656538462, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1664310656538467, "dur":2062, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/level0" }}
+,{ "pid":12345, "tid":3, "ts":1664310656540540, "dur":47871, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1664310656424689, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1664310656424690, "dur":10043, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1664310656434735, "dur":6185, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":4, "ts":1664310656440923, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1664310656444239, "dur":5444, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":4, "ts":1664310656449751, "dur":171, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":4, "ts":1664310656449925, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1664310656450561, "dur":3350, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":4, "ts":1664310656453971, "dur":23286, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon.exe" }}
+,{ "pid":12345, "tid":4, "ts":1664310656477260, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1664310656477265, "dur":2132, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon.exe" }}
+,{ "pid":12345, "tid":4, "ts":1664310656479413, "dur":409, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656479826, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1664310656479917, "dur":2911, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656482843, "dur":1859, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656484705, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1664310656484712, "dur":3527, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656488254, "dur":480, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656488736, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1664310656488741, "dur":1411, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656490167, "dur":1312, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656491482, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1664310656491488, "dur":21682, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656513183, "dur":349, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656513535, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1664310656513543, "dur":3622, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656517177, "dur":376, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656517588, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1664310656517595, "dur":3746, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656521355, "dur":259, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Environments.Internal.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656521617, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1664310656521623, "dur":2334, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Environments.Internal.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656523969, "dur":206, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Burst.Unsafe.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656524178, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1664310656524183, "dur":2457, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Burst.Unsafe.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656526654, "dur":1160, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.2D.Animation.Runtime.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656527817, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1664310656527822, "dur":3347, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.2D.Animation.Runtime.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656531185, "dur":289, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656531477, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1664310656531483, "dur":2517, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656534012, "dur":1715, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Newtonsoft.Json.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656535731, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1664310656535739, "dur":2590, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Newtonsoft.Json.dll" }}
+,{ "pid":12345, "tid":4, "ts":1664310656538344, "dur":2574, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":4, "ts":1664310656540922, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1664310656540928, "dur":1017, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":4, "ts":1664310656541956, "dur":46465, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1664310656424752, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1664310656424753, "dur":12363, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1664310656437119, "dur":3468, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":5, "ts":1664310656440590, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1664310656444124, "dur":5976, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":5, "ts":1664310656450161, "dur":130, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":5, "ts":1664310656450294, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1664310656450418, "dur":2858, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":5, "ts":1664310656453345, "dur":121026, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":5, "ts":1664310656574375, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1664310656574380, "dur":13939, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":5, "ts":1664310656588383, "dur":0, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Player" }}
+,{ "pid":12345, "tid":5, "ts":1664310656588384, "dur":0, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1664310656424831, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1664310656424831, "dur":10609, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1664310656435442, "dur":4627, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":6, "ts":1664310656440073, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1664310656443722, "dur":6690, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":6, "ts":1664310656450468, "dur":138, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":6, "ts":1664310656450609, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1664310656450629, "dur":47882, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":6, "ts":1664310656498592, "dur":845, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1664310656499440, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1664310656499446, "dur":16055, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1664310656515513, "dur":227, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1664310656515743, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1664310656515748, "dur":3005, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1664310656518766, "dur":294, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":6, "ts":1664310656519063, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1664310656519069, "dur":2812, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":6, "ts":1664310656521908, "dur":199, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.dll" }}
+,{ "pid":12345, "tid":6, "ts":1664310656522110, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1664310656522116, "dur":2223, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.dll" }}
+,{ "pid":12345, "tid":6, "ts":1664310656524352, "dur":512, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Burst.Cecil.Rocks.dll" }}
+,{ "pid":12345, "tid":6, "ts":1664310656524867, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1664310656524873, "dur":1678, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Burst.Cecil.Rocks.dll" }}
+,{ "pid":12345, "tid":6, "ts":1664310656526564, "dur":246, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.2D.Common.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1664310656526813, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1664310656526818, "dur":4597, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.2D.Common.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1664310656531504, "dur":1642, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":6, "ts":1664310656533150, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1664310656533244, "dur":2341, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":6, "ts":1664310656535596, "dur":224, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":6, "ts":1664310656535824, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1664310656535829, "dur":1696, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":6, "ts":1664310656537538, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":6, "ts":1664310656537553, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1664310656537558, "dur":2948, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":6, "ts":1664310656540521, "dur":47889, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1664310656425368, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1664310656425368, "dur":8793, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1664310656434163, "dur":166, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":7, "ts":1664310656434333, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1664310656444596, "dur":7221, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":7, "ts":1664310656451883, "dur":29738, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656481625, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1664310656481917, "dur":2117, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656484093, "dur":267, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656484363, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1664310656484377, "dur":1890, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656486284, "dur":409, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656486696, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1664310656486702, "dur":2889, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656489604, "dur":483, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656490147, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1664310656490155, "dur":22763, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656513178, "dur":2018, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656515202, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1664310656515209, "dur":3492, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656518711, "dur":252, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656518965, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1664310656518971, "dur":2394, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656521377, "dur":238, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Environments.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656521619, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1664310656521625, "dur":2487, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Environments.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656524125, "dur":497, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Burst.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656524625, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1664310656524631, "dur":2870, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Burst.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656527513, "dur":209, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656527756, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1664310656527763, "dur":2295, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656530072, "dur":280, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656530354, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1664310656530359, "dur":3467, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656533842, "dur":5618, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656539464, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1664310656539471, "dur":2491, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":7, "ts":1664310656541970, "dur":46447, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656425407, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656425408, "dur":8727, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656434138, "dur":3490, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":8, "ts":1664310656437631, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656452746, "dur":1368, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":8, "ts":1664310656454168, "dur":176, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":8, "ts":1664310656454348, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656454597, "dur":14058, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":8, "ts":1664310656468731, "dur":675, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656469409, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656469415, "dur":2493, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656471923, "dur":1181, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656473108, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656473116, "dur":2037, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656475168, "dur":1478, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656476649, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656476656, "dur":3755, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656480426, "dur":310, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656480740, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656480749, "dur":2782, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656483543, "dur":1516, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656485062, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656485068, "dur":1475, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656486554, "dur":339, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656486896, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656486902, "dur":1683, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656488597, "dur":260, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656488860, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656488866, "dur":1300, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656490177, "dur":874, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656491054, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656491061, "dur":22092, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656513166, "dur":2047, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656515217, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656515222, "dur":4910, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656520152, "dur":211, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Registration.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656520367, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656520373, "dur":3372, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Registration.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656523757, "dur":908, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Mathematics.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656524668, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656524673, "dur":2565, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Mathematics.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656527250, "dur":393, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656527646, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656527652, "dur":3536, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656531200, "dur":313, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656531516, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656531522, "dur":2567, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656534100, "dur":261, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656534364, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656534369, "dur":3824, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":8, "ts":1664310656538206, "dur":192, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":8, "ts":1664310656538401, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656538407, "dur":1957, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":8, "ts":1664310656540376, "dur":198, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/boot.config" }}
+,{ "pid":12345, "tid":8, "ts":1664310656540576, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1664310656540581, "dur":1193, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/boot.config" }}
+,{ "pid":12345, "tid":8, "ts":1664310656541792, "dur":46634, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656425300, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656425300, "dur":10877, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656436188, "dur":308, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":9, "ts":1664310656436500, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656448294, "dur":2694, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":9, "ts":1664310656451050, "dur":145, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":9, "ts":1664310656451198, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656451235, "dur":3605, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":9, "ts":1664310656454903, "dur":936, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656455845, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656456587, "dur":2422, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656459028, "dur":660, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656459694, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656459724, "dur":1684, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656461423, "dur":595, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656462022, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656462030, "dur":1227, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656463269, "dur":1408, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656464682, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656464693, "dur":2139, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656466847, "dur":1256, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656468147, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656468155, "dur":976, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656469142, "dur":770, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656469916, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656469923, "dur":1857, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656471793, "dur":1318, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656473115, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656473120, "dur":1464, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656474595, "dur":1000, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656475632, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656475639, "dur":7324, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656482976, "dur":194, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656483172, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656483178, "dur":2763, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656485961, "dur":295, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656486259, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656486266, "dur":2343, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656488620, "dur":384, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656489008, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656489013, "dur":1583, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656490609, "dur":1312, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656491924, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656491930, "dur":23441, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656515382, "dur":1266, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656516652, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656516657, "dur":2885, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656519555, "dur":227, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Scheduler.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656519785, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656519792, "dur":3325, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Scheduler.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656523130, "dur":192, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Device.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656523325, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656523332, "dur":2160, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Device.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656525505, "dur":539, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Burst.Cecil.Mdb.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656526048, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656526055, "dur":2571, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Burst.Cecil.Mdb.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656528639, "dur":431, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656529073, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656529080, "dur":1870, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656530963, "dur":318, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656531283, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656531289, "dur":2544, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656533848, "dur":317, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656534168, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656534174, "dur":1558, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":9, "ts":1664310656535750, "dur":267, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/StreamingAssets/UnityServicesProjectConfiguration.json" }}
+,{ "pid":12345, "tid":9, "ts":1664310656536020, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656536385, "dur":1093, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/StreamingAssets/UnityServicesProjectConfiguration.json" }}
+,{ "pid":12345, "tid":9, "ts":1664310656537492, "dur":12, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":9, "ts":1664310656537506, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1664310656537510, "dur":3959, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":9, "ts":1664310656541482, "dur":46944, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656425334, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656425335, "dur":10100, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656435437, "dur":141, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":10, "ts":1664310656435582, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656447640, "dur":3685, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":10, "ts":1664310656451399, "dur":135, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":10, "ts":1664310656451537, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656451544, "dur":9814, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":10, "ts":1664310656461433, "dur":832, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656462269, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656462276, "dur":1939, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656464234, "dur":1521, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656465762, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656465772, "dur":5233, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656471018, "dur":1641, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656472662, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656472667, "dur":1938, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656474617, "dur":304, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656474924, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656474933, "dur":2928, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656477884, "dur":802, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656478689, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656478708, "dur":1732, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656480452, "dur":580, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656481035, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656481043, "dur":3994, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656485052, "dur":515, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656485570, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656485576, "dur":1522, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656487109, "dur":11594, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656498707, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656498715, "dur":16856, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656515582, "dur":1238, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656516823, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656516829, "dur":2707, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656519548, "dur":249, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Telemetry.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656519800, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656519806, "dur":3870, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Telemetry.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656523689, "dur":172, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Analytics.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656523863, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656523869, "dur":2203, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Analytics.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656526087, "dur":221, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.2D.Tilemap.Extras.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656526311, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656526346, "dur":2688, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.2D.Tilemap.Extras.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656529045, "dur":557, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656529604, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656529611, "dur":1959, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656531581, "dur":3205, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656534790, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656534795, "dur":3758, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":10, "ts":1664310656538570, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":10, "ts":1664310656538585, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1664310656538590, "dur":1961, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":10, "ts":1664310656540565, "dur":47844, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656425222, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656425223, "dur":9129, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656434354, "dur":112, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":11, "ts":1664310656434469, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656444478, "dur":5912, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":11, "ts":1664310656450449, "dur":20863, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":11, "ts":1664310656471315, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656471325, "dur":3010, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":11, "ts":1664310656474405, "dur":1967, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656476375, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656476384, "dur":2080, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656478479, "dur":286, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656478769, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656478776, "dur":1936, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656480839, "dur":1430, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656482273, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656482281, "dur":4074, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656486367, "dur":639, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656487009, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656487015, "dur":1698, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656488724, "dur":441, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656489169, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656489174, "dur":1469, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656490656, "dur":228, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656490887, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656490893, "dur":22296, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656513202, "dur":1964, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656515201, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656515209, "dur":2072, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656517293, "dur":758, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656518054, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656518061, "dur":3246, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656521323, "dur":279, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Networking.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656521605, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656521612, "dur":4772, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Services.Core.Networking.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656526398, "dur":252, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.2D.PixelPerfect.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656526653, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656526659, "dur":4515, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.2D.PixelPerfect.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656531186, "dur":715, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656531904, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656531910, "dur":3612, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656535534, "dur":645, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656536182, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656536188, "dur":2145, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":11, "ts":1664310656538351, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":11, "ts":1664310656538368, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656538374, "dur":1976, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":11, "ts":1664310656540362, "dur":16, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":11, "ts":1664310656540380, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1664310656540386, "dur":1236, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":11, "ts":1664310656541633, "dur":46789, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1664310656425264, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1664310656425264, "dur":8915, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1664310656434182, "dur":3273, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":12, "ts":1664310656437458, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1664310656450689, "dur":1923, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":12, "ts":1664310656452674, "dur":65758, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":12, "ts":1664310656518436, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1664310656518456, "dur":6175, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":12, "ts":1664310656524698, "dur":658, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Burst.Cecil.Pdb.dll" }}
+,{ "pid":12345, "tid":12, "ts":1664310656525359, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1664310656525364, "dur":1976, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/Unity.Burst.Cecil.Pdb.dll" }}
+,{ "pid":12345, "tid":12, "ts":1664310656527353, "dur":3746, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":12, "ts":1664310656531132, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1664310656531138, "dur":4262, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":12, "ts":1664310656535412, "dur":5590, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":12, "ts":1664310656541005, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1664310656541013, "dur":3920, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/College/IT265/Dragoon/Builds/Windows/Dragoon_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":12, "ts":1664310656544949, "dur":43465, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1664310656601996, "dur":1744, "ph":"X", "name": "ProfilerWriteOutput" }
+,{ "pid": 0, "tid": 1, "ts": 1664310656640214, "dur": 674, "ph": "X", "name": "backend_profiler1.traceevents", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1664310656639798, "dur": 1110, "ph": "X", "name": "Write chrome-trace events", "args": {} },

@@ -54,20 +54,21 @@ public class CursorSet : MonoBehaviour
         else if (hasTarget && Input.GetKeyDown(KeyCode.Space))
         {
             tempCharacter.GetComponent<Unit>().move(transform.position - offset, this.gameObject);
+            hasTarget = false;
+            isRange = false;
+            isSelected = false;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && !isRange)
+        if (collision.gameObject.CompareTag("Player") && !isRange && collision.gameObject.GetComponent<Unit>().getActive())
         {
             isSelected = true;
             tempCharacter = collision.gameObject;
-            Debug.Log("selected");
         }
         else if (collision.gameObject.CompareTag("Bounds"))
         {
-            Debug.Log("Restart");
             Start();
         }
     }
@@ -77,12 +78,15 @@ public class CursorSet : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isSelected = false;
-            Debug.Log("unselected");
         }
 
         else if (collision.gameObject.CompareTag("Attack"))
         {
             isRange = false;
+        }
+        else if (collision.gameObject.CompareTag("Move"))
+        {
+            hasTarget = false;
         }
     }
 

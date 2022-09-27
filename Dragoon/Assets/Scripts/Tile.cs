@@ -23,7 +23,7 @@ public class Tile : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        else if (collision.gameObject.CompareTag("Mountain") && this.gameObject.CompareTag("Move"))
+        else if ((collision.gameObject.CompareTag("Mountain") || collision.gameObject.CompareTag("Enemy")) && this.gameObject.CompareTag("Move"))
         {
             Instantiate(attackSquare, transform.position, new Quaternion(0, 0, 0, 0), transform.parent.transform);
             Destroy(this.gameObject);

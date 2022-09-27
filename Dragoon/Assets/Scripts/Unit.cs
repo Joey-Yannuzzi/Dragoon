@@ -12,17 +12,28 @@ namespace unit
         public GameObject attackSquare;
         public float squareOffsetY;
         public float squareOffsetX;
+        public float speed;
+        private bool isActive;
+        private SpriteRenderer spriteRender;
 
         // Start is called before the first frame update
         void Start()
         {
-
+            spriteRender = GetComponent<SpriteRenderer>();
+            isActive = true;
         }
 
         // Update is called once per frame
         void Update()
         {
-
+            if (isActive)
+            {
+                spriteRender.color = new Color(255, 255, 255);
+            }
+            else
+            {
+                spriteRender.color = new Color(0, 0, 0);
+            }
         }
 
         public void getMoveVision()
@@ -32,7 +43,6 @@ namespace unit
             for (int bogus = 0; bogus <= mov; bogus ++)
             {
                 tempOffset = new Vector3(squareOffsetX, squareOffsetY + bogus, 0.01f);
-                Debug.Log(tempOffset);
                 Instantiate(attackSquare, (transform.position + tempOffset) + (new Vector3(1, 0, 0) * (bogus - (mov + 1))), new Quaternion(0, 0, 0, 0), transform);
 
                 if (bogus ==0)
@@ -99,32 +109,51 @@ namespace unit
             float x = target.x;
             float y = target.y;
             float z = target.z;
-
-            for (int bogus = 0; bogus < x - Math.Abs(transform.position.x); bogus++)
+            int loopX = (int) (x - transform.position.x);
+            int loopY = (int) (y - transform.position.y);
+            Vector3 xMove;
+            Vector3 yMove;
+            try
             {
-                if (x > transform.position.x)
-                {
-                    transform.Translate(Vector3.right);
-                }
-                else
-                {
-                    transform.Translate(Vector3.left);
-                }
+                xMove = new Vector3(loopX / Math.Abs(loopX), 0, 0);
             }
-            for (int bogus = 0; bogus < y - Math.Abs(transform.position.y); bogus++)
+            catch (DivideByZeroException)
             {
-                if (y > transform.position.y)
-                {
-                    transform.Translate(Vector3.up);
-                }
-                else
-                {
-                    transform.Translate(Vector3.down);
-                }
+                xMove = new Vector3(0, 0, 0);
             }
 
+            try
+            {
+                yMove = new Vector3(0, loopY / Math.Abs(loopY), 0);
+            }
+            catch (DivideByZeroException)
+            {
+                yMove = new Vector3(0, 0, 0);
+            }
+
+            while (transform.position.x != target.x)
+            {
+                transform.Translate(xMove * speed);
+            }
+
+            while (transform.position.y != target.y)
+            {
+                transform.Translate(yMove * speed);
+            }
+
+            killAll();
             cursor.SetActive(true);
+            setActive(false);
+        }
 
+        public bool getActive()
+        {
+            return (isActive);
+        }
+
+        public void setActive(bool active)
+        {
+            isActive = active;
         }
     }
 }
