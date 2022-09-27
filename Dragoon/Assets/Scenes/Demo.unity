@@ -10749,7 +10749,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1324097808}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &504537479
 SpriteRenderer:
@@ -17606,7 +17606,7 @@ Transform:
   - {fileID: 1359126447}
   - {fileID: 190831464}
   m_Father: {fileID: 1324097808}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &826168646
 PrefabInstance:
@@ -20147,7 +20147,7 @@ Transform:
   - {fileID: 184008823}
   - {fileID: 479768775}
   m_Father: {fileID: 1324097808}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &967387767
 PrefabInstance:
@@ -27593,13 +27593,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 504537478}
   - {fileID: 1532462712}
   - {fileID: 965748160}
   - {fileID: 1981948396}
   - {fileID: 1778186396}
   - {fileID: 820660716}
   - {fileID: 2097569656}
-  - {fileID: 504537478}
   - {fileID: 717560956}
   - {fileID: 564315383}
   - {fileID: 2080470948}
@@ -32388,7 +32388,7 @@ Transform:
   - {fileID: 343510766}
   - {fileID: 104130003}
   m_Father: {fileID: 1324097808}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1534200372
 PrefabInstance:
@@ -37410,7 +37410,7 @@ Transform:
   - {fileID: 1112116440}
   - {fileID: 1659580788}
   m_Father: {fileID: 1324097808}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1780989217
 PrefabInstance:
@@ -41616,7 +41616,7 @@ Transform:
   - {fileID: 1113219738}
   - {fileID: 1634703005}
   m_Father: {fileID: 1324097808}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1984162553
 PrefabInstance:
@@ -43822,7 +43822,7 @@ Transform:
   - {fileID: 452625098}
   - {fileID: 1478821283}
   m_Father: {fileID: 1324097808}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2102558300
 PrefabInstance:
