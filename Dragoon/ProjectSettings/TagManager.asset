@@ -12,6 +12,7 @@ TagManager:
   - Mountain
   - Move
   - Attack
+  - Enemy
   layers:
   - Default
   - TransparentFX
