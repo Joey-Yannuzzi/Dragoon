@@ -57,6 +57,11 @@ public class CursorSet : MonoBehaviour
             isSelected = true;
             tempCharacter = collision.gameObject;
         }
+        else if (collision.gameObject.CompareTag("Bounds"))
+        {
+            Debug.Log("Restart");
+            Start();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

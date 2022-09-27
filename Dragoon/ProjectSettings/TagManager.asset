@@ -8,6 +8,10 @@ TagManager:
   - Seize
   - Impassable
   - Passable
+  - Bounds
+  - Mountain
+  - Move
+  - Attack
   layers:
   - Default
   - TransparentFX
