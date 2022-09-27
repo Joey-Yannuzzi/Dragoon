@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace unit
 {
@@ -81,6 +82,49 @@ namespace unit
             tempOffset = new Vector3(squareOffsetX, squareOffsetY + nonsense, -0.01f);
             Instantiate(attackSquare, transform.position - tempOffset, new Quaternion(0, 0, 0, 0), transform);
             //worry about terrain later
+        }
+        public void killAll()
+        {
+            int count = transform.childCount;
+
+            for (int bogus = 0; bogus < count; bogus++)
+            {
+                Destroy(this.gameObject.transform.GetChild(bogus).gameObject);
+            }
+        }
+
+        public void move(Vector3 target, GameObject cursor)
+        {
+            cursor.SetActive(false);
+            float x = target.x;
+            float y = target.y;
+            float z = target.z;
+
+            for (int bogus = 0; bogus < x - Math.Abs(transform.position.x); bogus++)
+            {
+                if (x > transform.position.x)
+                {
+                    transform.Translate(Vector3.right);
+                }
+                else
+                {
+                    transform.Translate(Vector3.left);
+                }
+            }
+            for (int bogus = 0; bogus < y - Math.Abs(transform.position.y); bogus++)
+            {
+                if (y > transform.position.y)
+                {
+                    transform.Translate(Vector3.up);
+                }
+                else
+                {
+                    transform.Translate(Vector3.down);
+                }
+            }
+
+            cursor.SetActive(true);
+
         }
     }
 }
