@@ -12,6 +12,8 @@ public class Controller : MonoBehaviour
     public GameObject cursor;
     private int count;
     public GameObject playerController;
+    public GameObject enemyController;
+    private bool enemyStart;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,7 @@ public class Controller : MonoBehaviour
         phase = -1;
         setStart(true);
         cursor.SetActive(false);
+        enemyStart = false;
     }
 
     // Update is called once per frame
@@ -50,6 +53,7 @@ public class Controller : MonoBehaviour
                     break;
                 case 1:
                     isEnemy = true;
+                    this.gameObject.GetComponent<TextControl>().enemyPhaseShow();
                     break;
                 case 2:
                     isAlly = true;
@@ -70,6 +74,7 @@ public class Controller : MonoBehaviour
     private void setStart(bool start)
     {
         playerController.GetComponent<PlayerControl>().Reset();
+        enemyController.GetComponent<EnemyControl>().Reset();
         this.start = start;
         phase++;
     }
@@ -90,9 +95,17 @@ public class Controller : MonoBehaviour
 
     private void enemyPhase()
     {
+        if (!this.gameObject.GetComponent<TextControl>().getTimed())
+        {
+            setEnemyStart(true);
+        }
+        if (!enemyController.gameObject.GetComponent<EnemyControl>().getActive())
+        {
+            isEnemy = false;
+            setEnemyStart(false);
+            setStart(true);
+        }
         //Debug.Log("Enemy Phase start");
-        isEnemy = false;
-        setStart(true);
     }
 
     private void allyPhase()
@@ -108,5 +121,15 @@ public class Controller : MonoBehaviour
         is3rd = false;
         phase = -1;
         setStart(true);
+    }
+
+    private void setEnemyStart(bool enemyStart)
+    {
+        this.enemyStart = enemyStart;
+    }
+
+    public bool getEnemyStart()
+    {
+        return (enemyStart);
     }
 }
