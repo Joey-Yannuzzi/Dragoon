@@ -45,6 +45,14 @@ public class TextControl : MonoBehaviour
         tempTimer = Instantiate(timer);
     }
 
+    public void enemyPhaseShow()
+    {
+        isTimed = true;
+        phaseText.color = Color.red;
+        phaseText.text = "ENEMY PHASE";
+        tempTimer = Instantiate(timer);
+    }
+
     public bool getTimed()
     {
         return (isTimed);
