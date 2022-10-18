@@ -14,14 +14,17 @@ public class Controller : MonoBehaviour
     public GameObject playerController;
     public GameObject enemyController;
     private bool enemyStart;
+    private int runCount;
 
     // Start is called before the first frame update
     void Start()
     {
+        runCount = 0;
         phase = -1;
         setStart(true);
         cursor.SetActive(false);
         enemyStart = false;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -64,6 +67,11 @@ public class Controller : MonoBehaviour
             }
             start = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.visible = true;
+        }
     }
 
     public bool getStart()
@@ -77,13 +85,15 @@ public class Controller : MonoBehaviour
         enemyController.GetComponent<EnemyControl>().Reset();
         this.start = start;
         phase++;
+        runCount = 0;
     }
 
     private void playerPhase()
     {
-        if (!this.gameObject.GetComponent<TextControl>().getTimed())
+        if (!this.gameObject.GetComponent<TextControl>().getTimed() && runCount == 0)
         {
             cursor.SetActive(true);
+            runCount++;
         }
         if (!playerController.gameObject.GetComponent<PlayerControl>().getActive())
         {

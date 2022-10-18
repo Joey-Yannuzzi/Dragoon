@@ -11,6 +11,8 @@ public class CursorSet : MonoBehaviour
     private GameObject tempCharacter;
     private bool isRange = false;
     private bool hasTarget = false;
+    public GameObject commandController;
+    private bool isCommanding = false;
 
     private void Start()
     {
@@ -19,22 +21,22 @@ public class CursorSet : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && !isCommanding)
         {
             transform.Translate(Vector3.left);
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && !isCommanding)
         {
             transform.Translate(Vector3.right);
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && !isCommanding)
         {
             transform.Translate(Vector3.up);
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && !isCommanding)
         {
             transform.Translate(Vector3.down);
         }
@@ -51,12 +53,19 @@ public class CursorSet : MonoBehaviour
             tempCharacter.GetComponent<Unit>().killAll();
         }
 
-        else if (hasTarget && Input.GetKeyDown(KeyCode.Space))
+        else if (hasTarget && Input.GetKeyDown(KeyCode.Space) && !isCommanding)
         {
-            tempCharacter.GetComponent<Unit>().move(transform.position - offset, this.gameObject);
             hasTarget = false;
+            isCommanding = true;
+            commandController.GetComponent<CommandControl>().setUpCommand(tempCharacter, this.gameObject);
+        }
+        else if (commandController.GetComponent<CommandControl>().getSelected())
+        {
+            commandController.GetComponent<CommandControl>().Reset();
+            tempCharacter.GetComponent<Unit>().move(transform.position - offset, this.gameObject);
             isRange = false;
             isSelected = false;
+            isCommanding = false;
         }
     }
 
@@ -96,5 +105,15 @@ public class CursorSet : MonoBehaviour
         {
             hasTarget = true;
         }
+    }
+
+    private bool getIsCommanding()
+    {
+        return (isCommanding);
+    }
+
+    public void setIsCommanding(bool isCommanding)
+    {
+        this.isCommanding = isCommanding;
     }
 }
