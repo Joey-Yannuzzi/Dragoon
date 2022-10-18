@@ -41,7 +41,7 @@ public class CursorSet : MonoBehaviour
 
         if (isSelected && Input.GetKeyDown(KeyCode.Space))
         {
-            tempCharacter.GetComponent<Unit>().getMoveVision();
+            StartCoroutine(tempCharacter.GetComponent<Unit>().getMoveVision());
             isRange = true;
             isSelected = false;
         }

@@ -15,12 +15,14 @@ namespace unit
         public float speed;
         private bool isActive;
         private SpriteRenderer spriteRender;
+        private int tempMove;
 
         // Start is called before the first frame update
         void Start()
         {
             spriteRender = GetComponent<SpriteRenderer>();
             isActive = true;
+            tempMove = mov;
         }
 
         // Update is called once per frame
@@ -39,7 +41,7 @@ namespace unit
                 spriteRender.color = new Color(0, 0, 0);
             }
         }
-
+        /*
         public void getMoveVision()
         {
             Vector3 tempOffset = new Vector3(0, 0, 0);
@@ -61,6 +63,57 @@ namespace unit
 
                 for (int bogus2 = (mov * -1) + bogus; bogus2 <= mov - bogus; bogus2++)
                 {
+                    tempMove = mov;
+                    tempOffset = new Vector3(squareOffsetX, squareOffsetY + bogus, 0.01f);
+                    Instantiate(moveSquare, (transform.position + tempOffset) + (new Vector3(1, 0, 0) * bogus2), new Quaternion(0, 0, 0, 0), transform);
+
+                    if (bogus == 0)
+                    {
+
+                    }
+                    else
+                    {
+                        tempOffset = new Vector3(squareOffsetX, squareOffsetY + bogus, -0.01f);
+                        Instantiate(moveSquare, (transform.position - (tempOffset - new Vector3(0, 1, 0))) + (new Vector3(1, 0, 0) * bogus2), new Quaternion(0, 0, 0, 0), transform);
+                    }
+                }
+
+                tempOffset = new Vector3(squareOffsetX, squareOffsetY + bogus, 0.01f);
+                Instantiate(attackSquare, (transform.position + tempOffset) + (new Vector3(1, 0, 0) * ((mov + 1) - bogus)), new Quaternion(0, 0, 0, 0), transform);
+
+                if (bogus == 0)
+                {
+
+                }
+                else
+                {
+                    tempOffset = new Vector3(squareOffsetX, squareOffsetY + bogus, -0.01f);
+                    Instantiate(attackSquare, (transform.position - (tempOffset - new Vector3(0, 1, 0))) + (new Vector3(1, 0, 0) * ((mov + 1) - bogus)), new Quaternion(0, 0, 0, 0), transform);
+                }
+
+                nonsense = bogus;
+            }
+
+            killAll();
+
+            for (int bogus = 0; bogus <= tempMove; bogus++)
+            {
+                tempOffset = new Vector3(squareOffsetX, squareOffsetY + bogus, 0.01f);
+                Instantiate(attackSquare, (transform.position + tempOffset) + (new Vector3(1, 0, 0) * (bogus - (mov + 1))), new Quaternion(0, 0, 0, 0), transform);
+
+                if (bogus == 0)
+                {
+
+                }
+                else
+                {
+                    tempOffset = new Vector3(squareOffsetX, squareOffsetY + bogus, -0.01f);
+                    Instantiate(attackSquare, (transform.position - (tempOffset - new Vector3(0, 1, 0))) + (new Vector3(1, 0, 0) * (bogus - (mov + 1))), new Quaternion(0, 0, 0, 0), transform);
+                }
+
+                for (int bogus2 = (mov * -1) + bogus; bogus2 <= tempMove - bogus; bogus2++)
+                {
+                    tempMove = mov;
                     tempOffset = new Vector3(squareOffsetX, squareOffsetY + bogus, 0.01f);
                     Instantiate(moveSquare, (transform.position + tempOffset) + (new Vector3(1, 0, 0) * bogus2), new Quaternion(0, 0, 0, 0), transform);
 
@@ -97,6 +150,51 @@ namespace unit
             Instantiate(attackSquare, transform.position - tempOffset, new Quaternion(0, 0, 0, 0), transform);
             //worry about terrain later
         }
+        */
+
+        //Weird bug: sometimes correct squares are not shown; does not have a pattern
+        public IEnumerator getMoveVision()
+        {
+            setTempMove(mov);
+
+            for (int bogus = 0; bogus < tempMove; bogus++)
+            {
+                Instantiate(moveSquare, new Vector3(this.transform.position.x - (bogus + 1), this.transform.position.y + squareOffsetY, -0.01f), new Quaternion(0, 0, 0, 0), transform);
+                yield return new WaitUntil(() => this.transform.GetChild(bogus).gameObject.GetComponent<Tile>().check > 0);
+            }
+
+            setTempMove(mov);
+            yield return new WaitUntil(() => tempMove == mov);
+            Instantiate(moveSquare, transform);
+
+            for (int bogus = 0; bogus < tempMove; bogus++)
+            {
+                Instantiate(moveSquare, new Vector3(this.transform.position.x + (bogus + 1), this.transform.position.y + squareOffsetY, -0.01f), new Quaternion(0, 0, 0, 0), transform);
+                yield return new WaitUntil(() => this.transform.GetChild(bogus).gameObject.GetComponent<Tile>().check > 0);
+            }
+
+            setTempMove(mov);
+            yield return new WaitUntil(() => tempMove == mov);
+
+            for (int bogus = 0; bogus < tempMove; bogus++)
+            {
+                Instantiate(moveSquare, new Vector3(this.transform.position.x, this.transform.position.y - (bogus + 1) + squareOffsetY, -0.01f), new Quaternion(0, 0, 0, 0), transform);
+                yield return new WaitUntil(() => this.transform.GetChild(bogus).gameObject.GetComponent<Tile>().check > 0);
+            }
+
+            setTempMove(mov);
+            yield return new WaitUntil(() => tempMove == mov);
+
+            for (int bogus = 0; bogus < tempMove; bogus++)
+            {
+                Instantiate(moveSquare, new Vector3(this.transform.position.x, this.transform.position.y + (bogus + 1) + squareOffsetY, -0.01f), new Quaternion(0, 0, 0, 0), transform);
+                yield return new WaitUntil(() => this.transform.GetChild(bogus).gameObject.GetComponent<Tile>().check > 0);
+            }
+
+            setTempMove(mov);
+            yield return new WaitUntil(() => tempMove == mov);
+        }
+
         public void killAll()
         {
             int count = transform.childCount;
@@ -105,6 +203,8 @@ namespace unit
             {
                 Destroy(this.gameObject.transform.GetChild(bogus).gameObject);
             }
+
+            setTempMove(mov);
         }
 
         public void move(Vector3 target, GameObject cursor)
@@ -277,6 +377,21 @@ namespace unit
         public void setActive(bool active)
         {
             isActive = active;
+        }
+
+        public int getTempMove()
+        {
+            return (tempMove);
+        }
+
+        private void setTempMove(int tempMove)
+        {
+            this.tempMove = tempMove;
+        }
+
+        public void tempMoveCount()
+        {
+            tempMove--;
         }
     }
 }

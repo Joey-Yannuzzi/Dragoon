@@ -87,7 +87,6 @@ public class EnemyControl : MonoBehaviour
     //inactivity ends enemy phase
     private void moveInit()
     {
-        Debug.Log("Initiating movement");
         child.GetComponent<Unit>().enemyMove();
 
         try
@@ -95,11 +94,9 @@ public class EnemyControl : MonoBehaviour
             currentChild++;
             child = this.gameObject.transform.GetChild(currentChild).gameObject;
             phaseRunning = false;
-            Debug.Log(phaseRunning);
         }
         catch
         {
-            Debug.Log("Exception triggered");
             setActive(false);
             currentChild = 0;
             child = this.gameObject.transform.GetChild(currentChild).gameObject;
