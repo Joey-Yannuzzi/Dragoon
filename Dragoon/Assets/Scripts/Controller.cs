@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+
 public class Controller : MonoBehaviour
 {
     private int phase; //0 = player, 1 = enemy, 2 = ally, 3 = 3rd army, -1 = inactive

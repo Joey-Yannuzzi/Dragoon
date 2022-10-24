@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CommandControl : MonoBehaviour
 {
     private GameObject[] enemies;
     private bool selected;
+    private EventSystem eventSystem;
+    public GameObject system;
 
     // Start is called before the first frame update
     void Start()
     {
+        eventSystem = system.GetComponent<EventSystem>();
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         Reset();
     }
@@ -45,6 +49,7 @@ public class CommandControl : MonoBehaviour
     public void Reset()
     {
         setSelected(false);
+        eventSystem.SetSelectedGameObject(transform.GetChild(3).gameObject);
 
         for (int bogus = 0; bogus < transform.childCount; bogus++)
         {
