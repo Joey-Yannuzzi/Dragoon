@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Attack
     - CommandControl
     - Controller
     - CursorSet
@@ -83,6 +84,9 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.SpriteState
   methodsToPreserve:
   - assembly: Assembly-CSharp
+    fullTypeName: Attack
+    methodName: onClick
+  - assembly: Assembly-CSharp
     fullTypeName: Wait
     methodName: onClick
   sceneClasses:
@@ -126,31 +130,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4342}
     - Class: 114
-      Script: {instanceID: 4452}
+      Script: {instanceID: 4398}
     - Class: 114
-      Script: {instanceID: 4574}
+      Script: {instanceID: 4454}
     - Class: 114
-      Script: {instanceID: 4764}
+      Script: {instanceID: 4576}
     - Class: 114
-      Script: {instanceID: 5098}
+      Script: {instanceID: 4766}
     - Class: 114
-      Script: {instanceID: 5882}
+      Script: {instanceID: 5100}
     - Class: 114
-      Script: {instanceID: 6016}
+      Script: {instanceID: 5884}
     - Class: 114
-      Script: {instanceID: 6148}
+      Script: {instanceID: 6018}
     - Class: 114
-      Script: {instanceID: 6758}
+      Script: {instanceID: 6150}
     - Class: 114
-      Script: {instanceID: 6782}
+      Script: {instanceID: 6760}
     - Class: 114
-      Script: {instanceID: 6832}
+      Script: {instanceID: 6784}
     - Class: 114
-      Script: {instanceID: 6964}
+      Script: {instanceID: 6834}
     - Class: 114
-      Script: {instanceID: 7380}
+      Script: {instanceID: 6966}
     - Class: 114
-      Script: {instanceID: 8976}
+      Script: {instanceID: 7382}
+    - Class: 114
+      Script: {instanceID: 8978}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -554,6 +560,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CursorSet
+  - hash:
+      serializedVersion: 2
+      Hash: 6d569377d534a396d878330999c380c1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Attack
   - hash:
       serializedVersion: 2
       Hash: 79f1e4d923cfc803b34c05ae2cb73dac
@@ -1169,4 +1181,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/Demo.unity
-  playerPath: D:/College/IT265/Dragoon/Builds/Windows/Deliverable 2/Dragoon.exe
+  playerPath: D:/IT265/Dragoon/Builds/Deliverable3/Windows/Dragoon.exe
