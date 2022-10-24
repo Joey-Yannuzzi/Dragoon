@@ -57,7 +57,7 @@ public class CursorSet : MonoBehaviour
         {
             hasTarget = false;
             isCommanding = true;
-            commandController.GetComponent<CommandControl>().setUpCommand(tempCharacter, this.gameObject);
+            commandController.GetComponent<CommandControl>().setUpCommand(new Vector2(transform.position.x - offset.x, transform.position.y - offset.y), this.gameObject);
         }
         else if (commandController.GetComponent<CommandControl>().getSelected())
         {
@@ -115,5 +115,15 @@ public class CursorSet : MonoBehaviour
     public void setIsCommanding(bool isCommanding)
     {
         this.isCommanding = isCommanding;
+    }
+
+    public GameObject getTempcharacter()
+    {
+        return (tempCharacter);
+    }
+
+    private void setTempCharacter(GameObject tempCharacter)
+    {
+        this.tempCharacter = tempCharacter;
     }
 }

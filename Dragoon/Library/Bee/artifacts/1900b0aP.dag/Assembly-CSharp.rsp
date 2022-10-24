@@ -323,13 +323,16 @@
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.VisualScripting.State.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/UnityEngine.UI.ref.dll"
 "Assets/Hero Knight - Pixel Art/ColorSwap/ColorSwap_HeroKnight.cs"
+"Assets/Scripts/CommandControl.cs"
 "Assets/Scripts/Controller.cs"
 "Assets/Scripts/CursorSet.cs"
+"Assets/Scripts/EnemyControl.cs"
 "Assets/Scripts/PlayerControl.cs"
 "Assets/Scripts/TextControl.cs"
 "Assets/Scripts/Tile.cs"
 "Assets/Scripts/Timer.cs"
 "Assets/Scripts/Unit.cs"
+"Assets/Scripts/Wait.cs"
 -langversion:9.0
 
 /deterministic

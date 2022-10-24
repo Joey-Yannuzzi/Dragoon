@@ -1,18 +1,20 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - CommandControl
     - Controller
     - CursorSet
+    - EnemyControl
     - PlayerControl
     - TextControl
     - Tile
     - Timer
+    - Wait
     - unit.Unit
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
@@ -43,8 +45,10 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
   serializedClasses:
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
@@ -62,15 +66,25 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Style
     - TMPro.VertexGradient
     UnityEngine.CoreModule:
+    - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
+    - UnityEngine.Events.PersistentListenerMode
     UnityEngine.TextCoreFontEngineModule:
     - UnityEngine.TextCore.FaceInfo
     - UnityEngine.TextCore.Glyph
     - UnityEngine.TextCore.GlyphMetrics
     - UnityEngine.TextCore.GlyphRect
     UnityEngine.UI:
+    - UnityEngine.UI.AnimationTriggers
+    - UnityEngine.UI.Button/ButtonClickedEvent
+    - UnityEngine.UI.ColorBlock
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
-  methodsToPreserve: []
+    - UnityEngine.UI.Navigation
+    - UnityEngine.UI.SpriteState
+  methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: Wait
+    methodName: onClick
   sceneClasses:
     Assets/Scenes/Demo.unity:
     - Class: 1
@@ -96,37 +110,47 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2320}
+      Script: {instanceID: 1622}
     - Class: 114
-      Script: {instanceID: 2828}
+      Script: {instanceID: 1838}
     - Class: 114
-      Script: {instanceID: 3088}
+      Script: {instanceID: 2348}
     - Class: 114
-      Script: {instanceID: 4312}
+      Script: {instanceID: 2856}
     - Class: 114
-      Script: {instanceID: 4730}
+      Script: {instanceID: 3116}
     - Class: 114
-      Script: {instanceID: 5064}
+      Script: {instanceID: 3256}
     - Class: 114
-      Script: {instanceID: 5848}
+      Script: {instanceID: 3478}
     - Class: 114
-      Script: {instanceID: 5982}
+      Script: {instanceID: 4342}
     - Class: 114
-      Script: {instanceID: 6722}
+      Script: {instanceID: 4452}
     - Class: 114
-      Script: {instanceID: 6794}
+      Script: {instanceID: 4574}
     - Class: 114
-      Script: {instanceID: 6926}
+      Script: {instanceID: 4764}
     - Class: 114
-      Script: {instanceID: 7342}
+      Script: {instanceID: 5098}
     - Class: 114
-      Script: {instanceID: 8938}
+      Script: {instanceID: 5882}
     - Class: 114
-      Script: {instanceID: 30658}
+      Script: {instanceID: 6016}
     - Class: 114
-      Script: {instanceID: 194900}
+      Script: {instanceID: 6148}
     - Class: 114
-      Script: {instanceID: 251832}
+      Script: {instanceID: 6758}
+    - Class: 114
+      Script: {instanceID: 6782}
+    - Class: 114
+      Script: {instanceID: 6832}
+    - Class: 114
+      Script: {instanceID: 6964}
+    - Class: 114
+      Script: {instanceID: 7380}
+    - Class: 114
+      Script: {instanceID: 8976}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -194,6 +218,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Selectable
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CommandControl
   - hash:
       serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
@@ -383,6 +413,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerControl
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnDropdownValueChangedMessageListener
@@ -514,10 +550,16 @@ ScriptsOnlyBuild:
     className: UnityOnPointerExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 3330473717419f60fc06faec2e8103ed
+      Hash: b084a1d261480033adeb9c012c370c96
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CursorSet
+  - hash:
+      serializedVersion: 2
+      Hash: 79f1e4d923cfc803b34c05ae2cb73dac
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Timer
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -530,6 +572,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.SpriteShape.Runtime.dll
     namespaceName: 
     className: SpriteShapeGeometryCache
+  - hash:
+      serializedVersion: 2
+      Hash: 9b5672eac785b1f731f46d545632af7f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TextControl
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -700,7 +748,7 @@ ScriptsOnlyBuild:
     className: CCDSolver2D
   - hash:
       serializedVersion: 2
-      Hash: 16674af476a619d20f9898babceca6b5
+      Hash: 7e648163e5ca9f73ddadb8ff5023d2f8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Controller
@@ -734,6 +782,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_FontAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Wait
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -782,6 +836,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 9327dc88ac160a76698ee2bf427d6b52
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyControl
   - hash:
       serializedVersion: 2
       Hash: 940de06cc11bc6a7d16e2ec7c2cc0002
@@ -1106,25 +1166,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlayerControl
-  - hash:
-      serializedVersion: 2
-      Hash: 9b5672eac785b1f731f46d545632af7f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TextControl
-  - hash:
-      serializedVersion: 2
-      Hash: 79f1e4d923cfc803b34c05ae2cb73dac
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Timer
   platform: 19
   scenePathNames:
   - Assets/Scenes/Demo.unity
-  playerPath: D:/College/IT265/Dragoon/Builds/Windows/Dragoon.exe
+  playerPath: D:/College/IT265/Dragoon/Builds/Windows/Deliverable 2/Dragoon.exe

@@ -8,6 +8,7 @@ namespace unit
     public class Unit : MonoBehaviour
     {
         public int lvl, exp, hp, str, skl, spd, lck, def, res, con, mov;
+        private int attack, defense;
         public GameObject moveSquare;
         public GameObject attackSquare;
         public float squareOffsetY;
@@ -38,6 +39,9 @@ namespace unit
             {
                 spriteRender.color = new Color(0, 0, 0);
             }
+
+            setAttack();
+            setDefense();
         }
 
         public void getMoveVision()
@@ -277,6 +281,88 @@ namespace unit
         public void setActive(bool active)
         {
             isActive = active;
+        }
+
+        public void attackInit(String type)
+        {
+            GameObject[] victim = getEntities(type);
+
+            for (int bogus = 0; bogus < victim.Length; bogus++)
+            {
+                if ((transform.position.x + 1 == victim[bogus].transform.position.x || transform.position.x - 1 == victim[bogus].transform.position.x) && transform.position.y == victim[bogus].transform.position.y)
+                {
+                    hitCheck(victim[bogus]);
+                    break;
+                }
+                else if ((transform.position.y + 1 == victim[bogus].transform.position.y || transform.position.y - 1 == victim[bogus].transform.position.y) && transform.position.x == victim[bogus].transform.position.x)
+                {
+                    hitCheck(victim[bogus]);
+                    break;
+                }
+            }
+        }
+
+        private void hitCheck(GameObject victim)
+        {
+            bool hit = true;
+            if (hit)
+            {
+                damage(victim);
+            }
+        }
+        private void damage(GameObject victim)
+        {
+            int damage = attack - defense;
+
+            if (damage < 0)
+            {
+                damage = 0;
+            }
+
+            victim.GetComponent<Unit>().takeDamage(damage);
+        }
+
+        public void takeDamage(int damage)
+        {
+            hp = hp - damage;
+
+            if (hp < 1)
+            {
+                Debug.Log(this.gameObject.name + " died");
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                Debug.Log(this.gameObject.name + " took " + damage + " damage");
+            }
+        }
+
+        private GameObject[] getEntities(String type)
+        {
+            GameObject[] entities = GameObject.FindGameObjectsWithTag(type);
+            return (entities);
+        }
+
+        private int getAttack()
+        {
+            return (attack);
+        }
+
+        //Subject to change when weapons/advantage/effectiveness is implemented
+        private void setAttack()
+        {
+            attack = str;
+        }
+
+        private int getDefense()
+        {
+            return (defense);
+        }
+
+        //Subject to change when terrain
+        private void setDefense()
+        {
+            defense = def;
         }
     }
 }
