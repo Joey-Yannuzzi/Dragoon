@@ -9,6 +9,8 @@ namespace unit
     {
         public int lvl, exp, hp, str, skl, spd, lck, def, res, con, mov;
         private int attack, defense;
+        private int accuracy, avoid;
+        private int atkSpd;
         public GameObject moveSquare;
         public GameObject attackSquare;
         public float squareOffsetY;
@@ -42,6 +44,9 @@ namespace unit
 
             setAttack();
             setDefense();
+            setAtkSpd();
+            setAccuracy();
+            setAvoid();
         }
 
         public void getMoveVision()
@@ -283,18 +288,23 @@ namespace unit
             isActive = active;
         }
 
-        public void attackInit(String type)
+        //Initiates attack sequence
+        //Gets all available enemeis/players depending on who is attacking
+        //searhces if enemy is one tile away from destination
+        //if true, run hitCheck() and break out of loop because only one attack is permitted
+        //Logic Bug: players cannot select target, closest target is chosen
+        public void attackInit(String type, Vector3 cursorPos)
         {
             GameObject[] victim = getEntities(type);
 
             for (int bogus = 0; bogus < victim.Length; bogus++)
             {
-                if ((transform.position.x + 1 == victim[bogus].transform.position.x || transform.position.x - 1 == victim[bogus].transform.position.x) && transform.position.y == victim[bogus].transform.position.y)
+                if ((cursorPos.x + 1 == victim[bogus].transform.position.x || cursorPos.x - 1 == victim[bogus].transform.position.x) && cursorPos.y == victim[bogus].transform.position.y)
                 {
                     hitCheck(victim[bogus]);
                     break;
                 }
-                else if ((transform.position.y + 1 == victim[bogus].transform.position.y || transform.position.y - 1 == victim[bogus].transform.position.y) && transform.position.x == victim[bogus].transform.position.x)
+                else if ((cursorPos.y + 1 == victim[bogus].transform.position.y || cursorPos.y - 1 == victim[bogus].transform.position.y) && cursorPos.x == victim[bogus].transform.position.x)
                 {
                     hitCheck(victim[bogus]);
                     break;
@@ -302,14 +312,35 @@ namespace unit
             }
         }
 
+        //Checks the hit rate of the incoming attack
+        //calculates true accuraxy by subtracting unit's accuracy from the victims avoid
+        //Then generates two random float values, and averages them
+        //If the average is less than trueAcc, the attack hits, and damage() runs
+        //If not, the attack misses
+        //Visual Bug: attack sequence does not play, as it has not been implemented or created yet, therefore, animations are immidiate (or as fast as the computer can calculate)
         private void hitCheck(GameObject victim)
         {
-            bool hit = true;
-            if (hit)
+            System.Random rand = new System.Random();
+            int trueAcc = accuracy - victim.GetComponent<Unit>().getAvoid();
+            Debug.Log(trueAcc);
+            float rn1 = (float)rand.NextDouble();
+            float rn2 = (float)rand.NextDouble();
+            float ave = ((rn1 + rn2) / 2) * 100;
+            Debug.Log(ave);
+
+            if (ave < trueAcc)
             {
                 damage(victim);
             }
+            else
+            {
+                Debug.Log("miss");
+            }
         }
+
+        //Calculates damage done to the victim
+        //less than 0 damage is not possible, and is changed back to 0 damage
+        //Sends damage number to the victim so it can subtract the damage number
         private void damage(GameObject victim)
         {
             int damage = attack - defense;
@@ -322,6 +353,9 @@ namespace unit
             victim.GetComponent<Unit>().takeDamage(damage);
         }
 
+        //Subtracts damage from current hp
+        //If hp drops below 1, unit dies
+        //If not unit is still alive
         public void takeDamage(int damage)
         {
             hp = hp - damage;
@@ -363,6 +397,36 @@ namespace unit
         private void setDefense()
         {
             defense = def;
+        }
+
+        private int getAccuracy()
+        {
+            return (accuracy);
+        }
+
+        private void setAccuracy()
+        {
+            accuracy = 75 + (skl * 2) + (lck / 2);
+        }
+
+        public int getAvoid()
+        {
+            return (avoid);
+        }
+
+        private void setAvoid()
+        {
+            avoid = (atkSpd * 2) + lck;
+        }
+
+        private int getAtkSpd()
+        {
+            return (atkSpd);
+        }
+
+        private void setAtkSpd()
+        {
+            atkSpd = spd;
         }
     }
 }

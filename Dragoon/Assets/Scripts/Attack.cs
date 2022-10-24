@@ -7,6 +7,7 @@ public class Attack : MonoBehaviour
 {
     private GameObject player;
     public GameObject cursor;
+    public Vector3 offset;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class Attack : MonoBehaviour
     //Activates when 'Attack' button selected in command prompt
     public void onClick()
     {
-        player.GetComponent<Unit>().attackInit("Enemy");
+        player.GetComponent<Unit>().attackInit("Enemy", cursor.transform.position - offset);
         transform.GetComponentInParent<CommandControl>().setSelected(true);
     }
 }
