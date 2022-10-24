@@ -28,6 +28,7 @@ public class EnemyControl : MonoBehaviour
         if (controller.GetComponent<Controller>().getEnemyStart()  && !phaseRunning)
         {
             phaseRunning = true;
+            child = this.gameObject.transform.GetChild(currentChild).gameObject;
             moveInit();
         }
     }
@@ -37,6 +38,7 @@ public class EnemyControl : MonoBehaviour
     //Checks which enemies are active and inactive at the end of each frame
     private void LateUpdate()
     {
+        count = transform.childCount;
         checkCount();
     }
 
@@ -87,7 +89,6 @@ public class EnemyControl : MonoBehaviour
     //inactivity ends enemy phase
     private void moveInit()
     {
-        Debug.Log("Initiating movement");
         child.GetComponent<Unit>().enemyMove();
 
         try
@@ -95,11 +96,9 @@ public class EnemyControl : MonoBehaviour
             currentChild++;
             child = this.gameObject.transform.GetChild(currentChild).gameObject;
             phaseRunning = false;
-            Debug.Log(phaseRunning);
         }
         catch
         {
-            Debug.Log("Exception triggered");
             setActive(false);
             currentChild = 0;
             child = this.gameObject.transform.GetChild(currentChild).gameObject;

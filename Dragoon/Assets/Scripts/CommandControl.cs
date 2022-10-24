@@ -20,17 +20,18 @@ public class CommandControl : MonoBehaviour
         
     }
 
-    public void setUpCommand(GameObject target, GameObject cursor)
+    public void setUpCommand(Vector2 target, GameObject cursor)
     {
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
         for (int bogus = 0; bogus < enemies.Length; bogus++)
         {
-            if ((target.transform.position.x + 1 == enemies[bogus].transform.position.x || target.transform.position.x - 1 == enemies[bogus].transform.position.x) && (target.transform.position.y == enemies[bogus].transform.position.y))
+            if ((target.x + 1 == enemies[bogus].transform.position.x || target.x - 1 == enemies[bogus].transform.position.x) && (target.y == enemies[bogus].transform.position.y))
             {
                 this.transform.GetChild(1).gameObject.SetActive(true);
                 break;
             }
-            else if ((target.transform.position.y + 1 == enemies[bogus].transform.position.y || target.transform.position.y - 1 == enemies[bogus].transform.position.y) && (target.transform.position.x == enemies[bogus].transform.position.x))
+            else if ((target.y + 1 == enemies[bogus].transform.position.y || target.y - 1 == enemies[bogus].transform.position.y) && (target.x == enemies[bogus].transform.position.x))
             {
                 this.transform.GetChild(1).gameObject.SetActive(true);
                 break;

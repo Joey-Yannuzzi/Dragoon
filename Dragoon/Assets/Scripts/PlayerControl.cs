@@ -23,6 +23,7 @@ public class PlayerControl : MonoBehaviour
 
     private void LateUpdate()
     {
+        count = transform.childCount;
         checkCount();
     }
 

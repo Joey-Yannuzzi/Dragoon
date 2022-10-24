@@ -18,7 +18,6 @@ public class Wait : MonoBehaviour
 
     public void onClick()
     {
-        Debug.Log("Wait");
         transform.GetComponentInParent<CommandControl>().setSelected(true);
     }
 }
