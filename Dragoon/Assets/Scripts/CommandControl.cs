@@ -48,7 +48,7 @@ public class CommandControl : MonoBehaviour
 
     public void Reset()
     {
-        setSelected(false);
+        //setSelected(false);
         eventSystem.SetSelectedGameObject(transform.GetChild(3).gameObject);
 
         for (int bogus = 0; bogus < transform.childCount; bogus++)

@@ -10,6 +10,7 @@ namespace unit
         public int lvl, exp, hp, str, skl, spd, lck, def, res, con, mov;
         private int attack, defense;
         private int accuracy, avoid;
+        private int maxHp;
         private int atkSpd;
         public GameObject moveSquare;
         public GameObject attackSquare;
@@ -18,12 +19,16 @@ namespace unit
         public float speed;
         private bool isActive;
         private SpriteRenderer spriteRender;
+        private GameObject target;
+        private bool isSearching = false;
 
         // Start is called before the first frame update
         void Start()
         {
             spriteRender = GetComponent<SpriteRenderer>();
             isActive = true;
+            maxHp = hp;
+            target = null;
         }
 
         // Update is called once per frame
@@ -47,6 +52,12 @@ namespace unit
             setAtkSpd();
             setAccuracy();
             setAvoid();
+
+            if (isSearching && target)
+            {
+                hitCheck(target);
+                isSearching = false;
+            }
         }
 
         public void getMoveVision()
@@ -116,7 +127,7 @@ namespace unit
             }
         }
 
-        public void move(Vector3 target, GameObject cursor)
+        public void move(Vector3 target, GameObject cursor, bool isAttack)
         {
             cursor.SetActive(false);
             float x = target.x;
@@ -156,6 +167,33 @@ namespace unit
 
             killAll();
             cursor.SetActive(true);
+
+            if (!isAttack)
+            {
+                Reset();
+            }
+            else
+            {
+                getAttackVision();
+            }
+        }
+
+        private void getAttackVision()
+        {
+            for (int bogus = -1; bogus <= 1; bogus++)
+            {
+                if (bogus != 0)
+                {
+                    Instantiate(attackSquare, new Vector3(transform.position.x + bogus + squareOffsetX, transform.position.y + squareOffsetY, 0.01f), new Quaternion(0, 0, 0, 0), transform);
+                    Instantiate(attackSquare, new Vector3(transform.position.x + squareOffsetX, transform.position.y + bogus + squareOffsetY, 0.01f), new Quaternion(0, 0, 0, 0), transform);
+                }
+            }
+        }
+
+        private void Reset()
+        {
+            killAll();
+            setTarget(null);
             setActive(false);
         }
 
@@ -293,11 +331,15 @@ namespace unit
         //searhces if enemy is one tile away from destination
         //if true, run hitCheck() and break out of loop because only one attack is permitted
         //Logic Bug: players cannot select target, closest target is chosen
-        public void attackInit(String type, Vector3 cursorPos)
+        public void attackInit(String type, Vector3 cursorPos, GameObject cursor)
         {
-            GameObject[] victim = getEntities(type);
+            //GameObject[] victim = getEntities(type);
+            //GameObject target = cursor.GetComponent<CursorSet>().selectTarget(type);
+            move(cursorPos, cursor, true);
+            cursor.GetComponent<CursorSet>().setAttacking(true);
+            isSearching = true;
 
-            for (int bogus = 0; bogus < victim.Length; bogus++)
+            /*for (int bogus = 0; bogus < victim.Length; bogus++)
             {
                 if ((cursorPos.x + 1 == victim[bogus].transform.position.x || cursorPos.x - 1 == victim[bogus].transform.position.x) && cursorPos.y == victim[bogus].transform.position.y)
                 {
@@ -309,7 +351,7 @@ namespace unit
                     hitCheck(victim[bogus]);
                     break;
                 }
-            }
+            }*/
         }
 
         //Checks the hit rate of the incoming attack
@@ -335,6 +377,7 @@ namespace unit
             else
             {
                 Debug.Log("miss");
+                Reset();
             }
         }
 
@@ -351,6 +394,7 @@ namespace unit
             }
 
             victim.GetComponent<Unit>().takeDamage(damage);
+            Reset();
         }
 
         //Subtracts damage from current hp
@@ -427,6 +471,16 @@ namespace unit
         private void setAtkSpd()
         {
             atkSpd = spd;
+        }
+
+        public GameObject getTarget()
+        {
+            return (target);
+        }
+
+        public void setTarget(GameObject target)
+        {
+            this.target = target;
         }
     }
 }

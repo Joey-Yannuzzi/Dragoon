@@ -13,6 +13,9 @@ public class CursorSet : MonoBehaviour
     private bool hasTarget = false;
     public GameObject commandController;
     private bool isCommanding = false;
+    private bool enemySelected = false;
+    private bool isAttacking = false;
+    private bool isEnemy = false;
 
     private void Start()
     {
@@ -21,22 +24,22 @@ public class CursorSet : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) && !isCommanding)
+        if (Input.GetKeyDown(KeyCode.A) && (!isCommanding || isAttacking))
         {
             transform.Translate(Vector3.left);
         }
 
-        if (Input.GetKeyDown(KeyCode.D) && !isCommanding)
+        if (Input.GetKeyDown(KeyCode.D) && (!isCommanding || isAttacking))
         {
             transform.Translate(Vector3.right);
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && !isCommanding)
+        if (Input.GetKeyDown(KeyCode.W) && (!isCommanding || isAttacking))
         {
             transform.Translate(Vector3.up);
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && !isCommanding)
+        if (Input.GetKeyDown(KeyCode.S) && (!isCommanding || isAttacking))
         {
             transform.Translate(Vector3.down);
         }
@@ -48,7 +51,7 @@ public class CursorSet : MonoBehaviour
             isSelected = false;
         }
 
-        else if (!isRange && Input.GetKeyDown(KeyCode.Space))
+        else if (!isRange && !isAttacking && Input.GetKeyDown(KeyCode.Space))
         {
             tempCharacter.GetComponent<Unit>().killAll();
         }
@@ -59,13 +62,20 @@ public class CursorSet : MonoBehaviour
             isCommanding = true;
             commandController.GetComponent<CommandControl>().setUpCommand(new Vector2(transform.position.x - offset.x, transform.position.y - offset.y), this.gameObject);
         }
-        else if (commandController.GetComponent<CommandControl>().getSelected())
+        else if (commandController.GetComponent<CommandControl>().getSelected() && !isAttacking)
         {
-            commandController.GetComponent<CommandControl>().Reset();
-            tempCharacter.GetComponent<Unit>().move(transform.position - offset, this.gameObject);
+            Debug.Log("moved");
+            //commandController.GetComponent<CommandControl>().Reset();
+            //tempCharacter.GetComponent<Unit>().move(transform.position - offset, this.gameObject, false);
             isRange = false;
             isSelected = false;
             isCommanding = false;
+            commandController.GetComponent<CommandControl>().setSelected(false);
+        }
+        else if (isAttacking && isEnemy && Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("attacked");
+            tempCharacter.GetComponent<Unit>().setTarget(selectTarget("Enemy"));
         }
     }
 
@@ -80,6 +90,10 @@ public class CursorSet : MonoBehaviour
         {
             Start();
         }
+        else if (collision.gameObject.CompareTag("Attack"))
+        {
+            isEnemy = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -92,6 +106,7 @@ public class CursorSet : MonoBehaviour
         else if (collision.gameObject.CompareTag("Attack"))
         {
             isRange = false;
+            isEnemy = false;
         }
         else if (collision.gameObject.CompareTag("Move"))
         {
@@ -125,5 +140,43 @@ public class CursorSet : MonoBehaviour
     private void setTempCharacter(GameObject tempCharacter)
     {
         this.tempCharacter = tempCharacter;
+    }
+
+    private void setEnemySelected(bool enemySelected)
+    {
+        this.enemySelected = enemySelected;
+    }
+
+    public bool getEnemySelected()
+    {
+        return (enemySelected);
+    }
+
+    private bool getAttacking()
+    {
+        return (isAttacking);
+    }
+
+    public void setAttacking(bool isAttacking)
+    {
+        this.isAttacking = isAttacking;
+    }
+
+    public GameObject selectTarget(string type)
+    {
+        GameObject[] victims = GameObject.FindGameObjectsWithTag(type);
+        GameObject target = null;
+
+        for (int bogus = 0; bogus < victims.Length; bogus++)
+        {
+            if (transform.position - offset == victims[bogus].transform.position && Input.GetKeyDown(KeyCode.Space))
+            {
+                target = victims[bogus];
+                isAttacking = false;
+                break;
+            }
+        }
+
+        return (target);
     }
 }
