@@ -28,7 +28,9 @@ public class Attack : MonoBehaviour
     //Activates when 'Attack' button selected in command prompt
     public void onClick()
     {
-        player.GetComponent<Unit>().attackInit("Enemy", cursor.transform.position - offset);
+        //cursor.GetComponent<CursorSet>().setAttacking(true);
         transform.GetComponentInParent<CommandControl>().setSelected(true);
+        transform.GetComponentInParent<CommandControl>().Reset();
+        player.GetComponent<Unit>().attackInit("Enemy", cursor.transform.position - offset, cursor);
     }
 }
