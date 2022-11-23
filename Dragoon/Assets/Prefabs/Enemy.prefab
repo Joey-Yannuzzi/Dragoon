@@ -140,3 +140,6 @@ MonoBehaviour:
   squareOffsetY: 0.5
   squareOffsetX: 0
   speed: 1
+  counterAttack: 0
+  attackSequence: {fileID: 7696240201881693377, guid: 887ddd5ac540a384fb3f56e497c0e74d, type: 3}
+  attackUI: {fileID: 0}
