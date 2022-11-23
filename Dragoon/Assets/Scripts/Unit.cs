@@ -21,6 +21,9 @@ namespace unit
         private SpriteRenderer spriteRender;
         private GameObject target;
         private bool isSearching = false;
+        [SerializeField] private bool counterAttack;
+        [SerializeField] private GameObject attackSequence, attackUI;
+        private bool isAttackSequence;
 
         // Start is called before the first frame update
         void Start()
@@ -29,6 +32,7 @@ namespace unit
             isActive = true;
             maxHp = hp;
             target = null;
+            isAttackSequence = false;
         }
 
         // Update is called once per frame
@@ -55,6 +59,12 @@ namespace unit
 
             if (isSearching && target)
             {
+                if (!isAttackSequence)
+                {
+                    Instantiate(attackSequence);
+                    attackUI.SetActive(true);
+                    isAttackSequence = true;
+                }
                 hitCheck(target);
                 isSearching = false;
             }
@@ -333,25 +343,9 @@ namespace unit
         //Logic Bug: players cannot select target, closest target is chosen
         public void attackInit(String type, Vector3 cursorPos, GameObject cursor)
         {
-            //GameObject[] victim = getEntities(type);
-            //GameObject target = cursor.GetComponent<CursorSet>().selectTarget(type);
             move(cursorPos, cursor, true);
             cursor.GetComponent<CursorSet>().setAttacking(true);
             isSearching = true;
-
-            /*for (int bogus = 0; bogus < victim.Length; bogus++)
-            {
-                if ((cursorPos.x + 1 == victim[bogus].transform.position.x || cursorPos.x - 1 == victim[bogus].transform.position.x) && cursorPos.y == victim[bogus].transform.position.y)
-                {
-                    hitCheck(victim[bogus]);
-                    break;
-                }
-                else if ((cursorPos.y + 1 == victim[bogus].transform.position.y || cursorPos.y - 1 == victim[bogus].transform.position.y) && cursorPos.x == victim[bogus].transform.position.x)
-                {
-                    hitCheck(victim[bogus]);
-                    break;
-                }
-            }*/
         }
 
         //Checks the hit rate of the incoming attack
@@ -363,7 +357,7 @@ namespace unit
         private void hitCheck(GameObject victim)
         {
             System.Random rand = new System.Random();
-            int trueAcc = accuracy - victim.GetComponent<Unit>().getAvoid();
+            int trueAcc = getHit(victim);
             Debug.Log(trueAcc);
             float rn1 = (float)rand.NextDouble();
             float rn2 = (float)rand.NextDouble();
@@ -386,32 +380,40 @@ namespace unit
         //Sends damage number to the victim so it can subtract the damage number
         private void damage(GameObject victim)
         {
-            int damage = attack - defense;
+            int damage = getDamage(victim);
 
             if (damage < 0)
             {
                 damage = 0;
             }
 
-            victim.GetComponent<Unit>().takeDamage(damage);
+            victim.GetComponent<Unit>().takeDamage(damage, this.gameObject);
             Reset();
         }
 
         //Subtracts damage from current hp
         //If hp drops below 1, unit dies
         //If not unit is still alive
-        public void takeDamage(int damage)
+        public void takeDamage(int damage, GameObject opponent)
         {
             hp = hp - damage;
 
             if (hp < 1)
             {
                 Debug.Log(this.gameObject.name + " died");
+                counterAttack = false;
                 Destroy(this.gameObject);
             }
             else
             {
                 Debug.Log(this.gameObject.name + " took " + damage + " damage");
+            }
+
+            if (counterAttack)
+            {
+                isAttackSequence = true;
+                this.isSearching = true;
+                setTarget(opponent);
             }
         }
 
@@ -481,6 +483,18 @@ namespace unit
         public void setTarget(GameObject target)
         {
             this.target = target;
+        }
+
+        public int getHit(GameObject victim)
+        {
+            int trueAcc = accuracy - victim.GetComponent<Unit>().getAvoid();
+            return (trueAcc);
+        }
+
+        public int getDamage(GameObject victim)
+        {
+            int damage = attack - victim.GetComponent<Unit>().getDefense();
+            return (damage);
         }
     }
 }
