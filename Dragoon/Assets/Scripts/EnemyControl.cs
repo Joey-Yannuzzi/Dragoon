@@ -5,6 +5,7 @@ using unit;
 
 public class EnemyControl : MonoBehaviour
 {
+    //Variables
     private bool isActive;
     private int count;
     public GameObject controller;
@@ -12,7 +13,12 @@ public class EnemyControl : MonoBehaviour
     private GameObject child;
     private int currentChild;
 
-    // Start is called before the first frame update
+    //Runs on initiation
+    //sets currentChild equal to 0
+    //Sets the count equal to the number of the transform's children
+    //runs setActive with false parameter
+    //sets the phase bool to false
+    //Sets the child equal to the GameObject of the child with currentChild's index
     void Start()
     {
         currentChild = 0;
@@ -22,7 +28,10 @@ public class EnemyControl : MonoBehaviour
         child = this.gameObject.transform.GetChild(currentChild).gameObject;
     }
 
-    // Update is called once per frame
+    //Runs every frame
+    //Checks if the controller's enemyStart bool is true and if the phase is not running
+    //If true run the phase, and set the current child to the child with the corresponding index
+    //Run moveInit method
     void Update()
     {
         if (controller.GetComponent<Controller>().getEnemyStart()  && !phaseRunning)
@@ -42,16 +51,23 @@ public class EnemyControl : MonoBehaviour
         checkCount();
     }
 
+    //Setter for isActive
     private void setActive(bool active)
     {
         isActive = active;
     }
 
+    //Getter for isActive
     public bool getActive()
     {
         return (isActive);
     }
 
+    //Method used to check if all the enemy units acted
+    //Run in EnemyControl script LateUpdate
+    //checks if the children of the enemy controller GameObject are inactive
+    //Incriments a counter for each inactive child
+    //If the counter is equal to the total number of children set isActive to false
     private void checkCount()
     {
         int tempCount = 0;
@@ -70,6 +86,11 @@ public class EnemyControl : MonoBehaviour
         }
     }
 
+    //Method used to reset all the children and the controller
+    //Run in Controller script setStart method
+    //Sets isActive to true
+    //Unruns the phase
+    //Sets each valid child as active
     public void Reset()
     {
         setActive(true);
