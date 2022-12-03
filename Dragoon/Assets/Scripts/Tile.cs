@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
+    //Variables
     public GameObject attackSquare;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //Method used to distinguish between different terrains
+    //Runs whenever GameObject touches a collider
+    //Checks if the collided GameObject has the "Impassable" tag
+    //If true, destroy this GameObject (since it is impassable, nothing can exist in this space, therefore, a unit cannot move/attack on this space)
+    //Then checks if the collided GameObject is a mountain, enemy, and if this GameObject is a move square
+    //If true place an attack square down where this GameObject is and then destroy this GameObject
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Impassable"))

@@ -7,6 +7,7 @@ namespace unit
 {
     public class Unit : MonoBehaviour
     {
+        //Variables
         public int lvl, exp, hp, str, skl, spd, lck, def, res, con, mov;
         private int attack, defense;
         private int accuracy, avoid;
@@ -25,7 +26,12 @@ namespace unit
         [SerializeField] private GameObject attackSequence, attackUI;
         private bool isAttackSequence;
 
-        // Start is called before the first frame update
+        //Run on initiation
+        //Set up the sprite renderer
+        //set isActive to true
+        //set the maxHP to the hp stat (used for healing when implemented)
+        //set the target to null
+        //set isAttackSequence to false
         void Start()
         {
             spriteRender = GetComponent<SpriteRenderer>();
@@ -35,7 +41,16 @@ namespace unit
             isAttackSequence = false;
         }
 
-        // Update is called once per frame
+        //Run every frame
+        //Changes the color scheme of the players and enemies as appropriate
+        //Red is for active enemies
+        //All color is for active players
+        //Black is for inactive players and enemies
+        //runs setAttack, setDefense, setAtkSpd, setAccuracy, setAvoid (used for attack calculations later)
+        //Checks if searching is true, and target is valid (not null)
+        //If true checks if attackSequence is true
+        //If true runs the attackSequence code (not fully implemented and breaks game currently)
+        //Then runs hitCheck() and sets isSearching to false
         void Update()
         {
             if (isActive && this.gameObject.CompareTag("Player"))
@@ -70,6 +85,14 @@ namespace unit
             }
         }
 
+        //Method used to calculate the movement vision and intantiate the squares on the space
+        //Run in CursorSet script Update method
+        //Intantiates an entire row of blue move squares
+        //Adds attack squares on the ends
+        //Moves to next row and repeats
+        //Goes for as long as the value of mov is
+        //Calculates move correctly, however, doesn't account for enemies blocking the way or terrain
+        //If there is an enemy or inpassable terrain, red sqaure appears in its place to signify invalid square
         public void getMoveVision()
         {
             Vector3 tempOffset = new Vector3(0, 0, 0);
@@ -127,6 +150,10 @@ namespace unit
             Instantiate(attackSquare, transform.position - tempOffset, new Quaternion(0, 0, 0, 0), transform);
             //worry about terrain later
         }
+
+        //Method used to kill all of the unit's children
+        //Loops through all the children of the unit GameObject and destroys them all
+        //Used to get rid of movement/attack squares
         public void killAll()
         {
             int count = transform.childCount;
@@ -137,6 +164,18 @@ namespace unit
             }
         }
 
+        //Method used to move the player unit to a selected space
+        //Takes target, cursor, and attack parameters
+        //Makes the cursor inactive
+        //Sets x, y, and z floats equal to the target vector's x, y, and z
+        //Find the x and y movement vectors
+        //Find the x and y directions by dividing them by their absolute value
+        //Catches a DivideByZero exception and set the move vector to 0
+        //Move the unit until they react the target destination
+        //Run killAll method
+        //Make the cursor active
+        //If the attack bool is true, set up for attack selection
+        //If not, run Reset method
         public void move(Vector3 target, GameObject cursor, bool isAttack)
         {
             cursor.SetActive(false);
@@ -188,6 +227,9 @@ namespace unit
             }
         }
 
+        //Method used to set up attack squares adjacent to the unit after moving, but before attacking
+        //Run from Unit script move method if attack bool was true
+        //Loops from -1 to 1 and spawns attack squares in 4 spaces where x is -1 and 1 and y is -1 and 1 (tiles are all adjacent to unit)
         private void getAttackVision()
         {
             for (int bogus = -1; bogus <= 1; bogus++)
@@ -200,6 +242,10 @@ namespace unit
             }
         }
 
+        //Method used to reset multiple things
+        //Runs killAll method
+        //Sets the target to null
+        //Sets isActive to false
         private void Reset()
         {
             killAll();
@@ -326,21 +372,23 @@ namespace unit
             return (player);
         }
 
+        //Getter for isActive
         public bool getActive()
         {
             return (isActive);
         }
 
+        //Setter for isActive
         public void setActive(bool active)
         {
             isActive = active;
         }
 
         //Initiates attack sequence
-        //Gets all available enemeis/players depending on who is attacking
-        //searhces if enemy is one tile away from destination
-        //if true, run hitCheck() and break out of loop because only one attack is permitted
-        //Logic Bug: players cannot select target, closest target is chosen
+        //Run from Attack script onClick method
+        //Runs move method
+        //Tells CursorSet script's attacking bool to true
+        //Sets isSearching to true
         public void attackInit(String type, Vector3 cursorPos, GameObject cursor)
         {
             move(cursorPos, cursor, true);
@@ -394,6 +442,7 @@ namespace unit
         //Subtracts damage from current hp
         //If hp drops below 1, unit dies
         //If not unit is still alive
+        //Checks if a counter attack can happen and runs it if possible
         public void takeDamage(int damage, GameObject opponent)
         {
             hp = hp - damage;
@@ -417,80 +466,98 @@ namespace unit
             }
         }
 
+        //Getter for entities
         private GameObject[] getEntities(String type)
         {
             GameObject[] entities = GameObject.FindGameObjectsWithTag(type);
             return (entities);
         }
 
+        //Getter for attack
         private int getAttack()
         {
             return (attack);
         }
 
+        //Setter for attack
         //Subject to change when weapons/advantage/effectiveness is implemented
         private void setAttack()
         {
             attack = str;
         }
 
+        //Getter for defense
         private int getDefense()
         {
             return (defense);
         }
 
+        //Setter for defense
         //Subject to change when terrain
         private void setDefense()
         {
             defense = def;
         }
 
+        //Getter for accuracy
         private int getAccuracy()
         {
             return (accuracy);
         }
 
+        //Setter for accuracy
         private void setAccuracy()
         {
             accuracy = 75 + (skl * 2) + (lck / 2);
         }
 
+        //Getter for avoid
         public int getAvoid()
         {
             return (avoid);
         }
 
+        //Setter for avoid
         private void setAvoid()
         {
             avoid = (atkSpd * 2) + lck;
         }
 
+        //Getter for atkSpd
         private int getAtkSpd()
         {
             return (atkSpd);
         }
 
+        //Setter for atkSpd
         private void setAtkSpd()
         {
             atkSpd = spd;
         }
 
+        //Getter for target
         public GameObject getTarget()
         {
             return (target);
         }
 
+        //Setter for target
         public void setTarget(GameObject target)
         {
             this.target = target;
         }
 
+        //Method for calculating true accuracy
+        //Takes the unit's accuracy and subtracts the victim's avoid
         public int getHit(GameObject victim)
         {
             int trueAcc = accuracy - victim.GetComponent<Unit>().getAvoid();
             return (trueAcc);
         }
 
+        //Method for calculating damage
+        //Takes the unit's attack and subtracts by the victim's defense
+        //Subject to change as more is implemented
         public int getDamage(GameObject victim)
         {
             int damage = attack - victim.GetComponent<Unit>().getDefense();

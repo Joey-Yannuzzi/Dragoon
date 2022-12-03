@@ -5,38 +5,45 @@ using unit;
 
 public class PlayerControl : MonoBehaviour
 {
+    //Variables
     private bool isActive = true;
     private int count;
 
-    // Start is called before the first frame update
+    //Run on initiation
+    //Sets count equal to the number of children, which is the number of player units
+    //Sets isActive to true
     void Start()
     {
         count = transform.childCount;
         setActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    //Runs at the end of every frame
+    //Sets the count equal to the number of children, just in case one of the players died during the frame's calculations
+    //Runs the checkCount method
     private void LateUpdate()
     {
         count = transform.childCount;
         checkCount();
     }
 
+    //Setter for isActive
     private void setActive(bool active)
     {
         isActive = active;
     }
 
+    //Getter for isActive
     public bool getActive()
     {
         return (isActive);
     }
 
+    //Method used to check if all the player units acted
+    //Run in PlayerControl script LateUpdate
+    //checks if the children of the player controller GameObject are inactive
+    //Incriments a counter for each inactive child
+    //If the counter is equal to the total number of children set isActive to false
     private void checkCount()
     {
         int tempCount = 0;
@@ -54,6 +61,10 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    //Method used to reset all the children and the controller
+    //Run in Controller script setStart method
+    //Sets isActive to true
+    //Sets each valid child as active
     public void Reset()
     {
         setActive(true);

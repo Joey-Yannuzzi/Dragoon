@@ -9725,6 +9725,7 @@ MonoBehaviour:
   mainPlayer: {fileID: 504537477}
   offset: {x: 0, y: 0.5, z: 0}
   commandController: {fileID: 610498518}
+  multiple: 60
 --- !u!212 &489430516
 SpriteRenderer:
   m_ObjectHideFlags: 0

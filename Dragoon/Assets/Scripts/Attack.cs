@@ -5,16 +5,12 @@ using unit;
 
 public class Attack : MonoBehaviour
 {
+    //Variables
     private GameObject player;
     public GameObject cursor;
     public Vector3 offset;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    //Runs every frame
     //Sets player equal to the currently selected character if not null
     void Update()
     {

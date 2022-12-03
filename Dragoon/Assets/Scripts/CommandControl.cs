@@ -5,12 +5,16 @@ using UnityEngine.EventSystems;
 
 public class CommandControl : MonoBehaviour
 {
+    //Variables
     private GameObject[] enemies;
     private bool selected;
     private EventSystem eventSystem;
     public GameObject system;
 
-    // Start is called before the first frame update
+    //Runs on initiation
+    //Set the event system to the game's event system
+    //Populate the enemies GameObject with all GameObjects with the "Enemy" tag
+    //Run Reset method
     void Start()
     {
         eventSystem = system.GetComponent<EventSystem>();
@@ -18,12 +22,11 @@ public class CommandControl : MonoBehaviour
         Reset();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //Method used to determine which commands are available and only show valid commands
+    //Populates enemies with all enemy GameObjects
+    //Checks if there is an enemy in any of the spaces next to the target location
+    //If true, set the "Attack" GameObject to true and break out of the loop
+    //After the loop, set the "Item" and "Wait" GameObjects to true
     public void setUpCommand(Vector2 target, GameObject cursor)
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -46,6 +49,9 @@ public class CommandControl : MonoBehaviour
         transform.GetChild(3).gameObject.SetActive(true);
     }
 
+    //Method used to reset the event system's selected GameObject and the command GameObjects
+    //Sets the event system's selected GameObject to the "Wait" GameObject (this is so the player can use WASD to select commands instead of the mouse, which will be invisible during gameplay)
+    //Sets all the command GameObjects to false
     public void Reset()
     {
         //setSelected(false);
@@ -57,11 +63,13 @@ public class CommandControl : MonoBehaviour
         }
     }
 
+    //Getter for selected
     public bool getSelected()
     {
         return (selected);
     }
 
+    //Setter for selected
     public void setSelected(bool selected)
     {
         this.selected = selected;

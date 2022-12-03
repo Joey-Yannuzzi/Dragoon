@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    //Variables
     public float time;
     private float currentTime;
-    // Start is called before the first frame update
+
+    //Runs on initiation
+    //Sets the current time to the max time
     void Start()
     {
         currentTime = time;
     }
 
-    // Update is called once per frame
+    //Runs every frame
+    //Checks if the current time is greater than 0
+    //If true, subtract Time.deltaTime from the current time
+    //If false destroy this GameObject
     void Update()
     {
         if (currentTime > 0)
@@ -25,6 +31,7 @@ public class Timer : MonoBehaviour
         }
     }
 
+    //Getter for currentTime
     public float getTime()
     {
         return (currentTime);
