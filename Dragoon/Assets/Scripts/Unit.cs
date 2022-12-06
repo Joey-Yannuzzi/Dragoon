@@ -79,6 +79,7 @@ namespace unit
                     Instantiate(attackSequence);
                     attackUI.SetActive(true);
                     isAttackSequence = true;
+                    attackUI.GetComponent<AttackSequenceUI>().sequenceInit(this.gameObject, target);
                 }
                 hitCheck(target);
                 isSearching = false;
