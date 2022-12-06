@@ -18,6 +18,7 @@ public class Controller : MonoBehaviour
     public GameObject enemyController;
     private bool enemyStart;
     private int runCount;
+    [SerializeField] private GameObject attackUI;
 
     //Run on initiation
     //Sets runCount to 0
@@ -26,6 +27,7 @@ public class Controller : MonoBehaviour
     //disables the cursor GameObject
     //sets enemy start to false
     //Makes the cursor disappear
+    //Sets the frame rate to 60 FPS (this is done to keep the cursor and other frame dependent features moving at a constant rate on different machines
     void Start()
     {
         runCount = 0;
@@ -34,6 +36,7 @@ public class Controller : MonoBehaviour
         cursor.SetActive(false);
         enemyStart = false;
         Cursor.visible = false;
+        Application.targetFrameRate = 60;
     }
 
     //Runs every frame
@@ -44,6 +47,15 @@ public class Controller : MonoBehaviour
     //Looks for escape key input and makes cursor visable when pressed (used for debug purposes)
     void Update()
     {
+        if (attackUI.GetComponent<AttackSequenceUI>().getActive())
+        {
+            cursor.SetActive(false);
+        }
+        else
+        {
+            cursor.SetActive(true);
+        }
+
         if (isPlayer)
         {
             playerPhase();
@@ -122,7 +134,7 @@ public class Controller : MonoBehaviour
             cursor.SetActive(true);
             runCount++;
         }
-        if (!playerController.gameObject.GetComponent<PlayerControl>().getActive())
+        if (!playerController.gameObject.GetComponent<PlayerControl>().getActive() && !attackUI.GetComponent<AttackSequenceUI>().getActive())
         {
             isPlayer = false;
             setStart(true);

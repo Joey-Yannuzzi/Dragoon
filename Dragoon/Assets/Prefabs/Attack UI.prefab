@@ -1626,6 +1626,8 @@ MonoBehaviour:
   enemyDmg: {fileID: 1545215701271870356}
   enemyCrit: {fileID: 1545215700731145759}
   enemyHp: {fileID: 1545215700521719828}
+  frameRate: 60
+  time: 5
 --- !u!1 &1545215701947575728
 GameObject:
   m_ObjectHideFlags: 0

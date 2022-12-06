@@ -9725,7 +9725,7 @@ MonoBehaviour:
   mainPlayer: {fileID: 504537477}
   offset: {x: 0, y: 0.5, z: 0}
   commandController: {fileID: 610498518}
-  multiple: 60
+  multiple: 10
 --- !u!212 &489430516
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9888,6 +9888,7 @@ MonoBehaviour:
   cursor: {fileID: 489430514}
   playerController: {fileID: 560987935}
   enemyController: {fileID: 494470161}
+  attackUI: {fileID: 1915828775}
 --- !u!114 &490912753
 MonoBehaviour:
   m_ObjectHideFlags: 0
