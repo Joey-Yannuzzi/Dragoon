@@ -10,17 +10,54 @@ public class AttackSequenceUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI miss;
     [SerializeField] private TextMeshProUGUI playerHit, playerDmg, playerCrit, playerHp;
     [SerializeField] private TextMeshProUGUI enemyHit, enemyDmg, enemyCrit, enemyHp;
+    [SerializeField] private int frameRate;
+    [SerializeField] private int time;
+    private GameObject attackSequence;
+    private int frame;
+    private bool isActive = false;
 
-    public void sequenceInit(GameObject player, GameObject enemy)
+    private void Update()
     {
+        /*frame++;
+
+        if (frame/frameRate == time)
+        {
+            Reset();
+        }*/
+    }
+
+    private void Reset()
+    {
+        this.gameObject.SetActive(false);
+        Destroy(attackSequence);
+        frame = 0;
+        attackSequence = null;
+        setActive(false);
+    }
+    public void sequenceInit(GameObject player, GameObject enemy, GameObject sequence)
+    {
+        setActive(true);
+        attackSequence = sequence;
         setMiss("");
         setPlayerHit("HIT: " + player.GetComponent<Unit>().getHit(enemy));
         setPlayerDmg("DMG: " + player.GetComponent<Unit>().getDamage(enemy));
         setPlayerCrit("CRT: 0");
-        //setPlayerHp(player.GetComponent<Unit>().getHp());
+        setPlayerHp("HP: " + player.GetComponent<Unit>().getHp());
         setEnemyHit("HIT: " + enemy.GetComponent<Unit>().getHit(player));
         setEnemyDmg("DMG: " + enemy.GetComponent<Unit>().getDamage(player));
         setEnemyCrit("CRT: 0");
+        setEnemyHp("HP: " + enemy.GetComponent<Unit>().getHp());
+        attackSequence.GetComponent<AttackSequenceAnimation>().animationInit(true);
+    }
+
+    public bool getActive()
+    {
+        return (isActive);
+    }
+
+    private void setActive(bool isActive)
+    {
+        this.isActive = isActive;
     }
 
     private TextMeshProUGUI getMiss()

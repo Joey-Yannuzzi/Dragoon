@@ -25,6 +25,7 @@ namespace unit
         [SerializeField] private bool counterAttack;
         [SerializeField] private GameObject attackSequence, attackUI;
         private bool isAttackSequence;
+        private GameObject currentAttackSequence;
 
         //Run on initiation
         //Set up the sprite renderer
@@ -76,10 +77,10 @@ namespace unit
             {
                 if (!isAttackSequence)
                 {
-                    Instantiate(attackSequence);
+                    currentAttackSequence = Instantiate(attackSequence);
                     attackUI.SetActive(true);
                     isAttackSequence = true;
-                    attackUI.GetComponent<AttackSequenceUI>().sequenceInit(this.gameObject, target);
+                    attackUI.GetComponent<AttackSequenceUI>().sequenceInit(this.gameObject, target, currentAttackSequence);
                 }
                 hitCheck(target);
                 isSearching = false;
@@ -252,6 +253,8 @@ namespace unit
             killAll();
             setTarget(null);
             setActive(false);
+            isAttackSequence = false;
+            currentAttackSequence = null;
         }
 
         //Enemy only script
@@ -562,7 +565,24 @@ namespace unit
         public int getDamage(GameObject victim)
         {
             int damage = attack - victim.GetComponent<Unit>().getDefense();
+
+            if (damage < 0)
+            {
+                damage = 0;
+            }
             return (damage);
+        }
+
+        //Getter for hp
+        public int getHp()
+        {
+            return (hp);
+        }
+
+        //Setter for hp
+        private void setHp(int hp)
+        {
+            this.hp = hp;
         }
     }
 }
