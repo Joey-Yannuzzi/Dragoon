@@ -12,18 +12,16 @@ public class AttackSequenceUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI enemyHit, enemyDmg, enemyCrit, enemyHp;
     [SerializeField] private int frameRate;
     [SerializeField] private int time;
-    private GameObject attackSequence;
+    private GameObject attackSequence, player, enemy;
     private int frame;
     private bool isActive = false;
 
     private void Update()
     {
-        /*frame++;
-
-        if (frame/frameRate == time)
+        if (attackSequence.GetComponent<AttackSequenceAnimation>().getCombatCount() == 0 && attackSequence.GetComponent<AttackSequenceAnimation>().getInit())
         {
             Reset();
-        }*/
+        }
     }
 
     private void Reset()
@@ -32,10 +30,14 @@ public class AttackSequenceUI : MonoBehaviour
         Destroy(attackSequence);
         frame = 0;
         attackSequence = null;
+        player = null;
+        enemy = null;
         setActive(false);
     }
-    public void sequenceInit(GameObject player, GameObject enemy, GameObject sequence)
+    public void sequenceInit(GameObject player, GameObject enemy, GameObject sequence, int attacks)
     {
+        this.player = player;
+        this.enemy = enemy;
         setActive(true);
         attackSequence = sequence;
         setMiss("");
@@ -47,7 +49,9 @@ public class AttackSequenceUI : MonoBehaviour
         setEnemyDmg("DMG: " + enemy.GetComponent<Unit>().getDamage(player));
         setEnemyCrit("CRT: 0");
         setEnemyHp("HP: " + enemy.GetComponent<Unit>().getHp());
-        attackSequence.GetComponent<AttackSequenceAnimation>().animationInit(true);
+        attackSequence.GetComponent<AttackSequenceAnimation>().setCombatCount(attacks);
+        attackSequence.GetComponent<AttackSequenceAnimation>().animationInit(true, this.gameObject);
+        attackSequence.GetComponent<AttackSequenceAnimation>().setCombatCount(attacks);
     }
 
     public bool getActive()
@@ -105,9 +109,16 @@ public class AttackSequenceUI : MonoBehaviour
         return (playerHp);
     }
 
-    private void setPlayerHp(string playerHp)
+    public void setPlayerHp(string playerHp)
     {
-        this.playerHp.text = playerHp;
+        try
+        {
+            this.playerHp.text = "HP: " + player.GetComponent<Unit>().getHp();
+        }
+        catch
+        {
+            this.playerHp.text = "HP: 0";
+        }
     }
 
     private TextMeshProUGUI getEnemyHit()
@@ -145,8 +156,15 @@ public class AttackSequenceUI : MonoBehaviour
         return (enemyHp);
     }
 
-    private void setEnemyHp(string enemyHp)
+    public void setEnemyHp(string enemyHp)
     {
-        this.enemyHp.text = enemyHp;
+        try
+        {
+            this.enemyHp.text = "HP: " + enemy.GetComponent<Unit>().getHp();
+        }
+        catch
+        {
+            this.enemyHp.text = "HP: 0";
+        }
     }
 }

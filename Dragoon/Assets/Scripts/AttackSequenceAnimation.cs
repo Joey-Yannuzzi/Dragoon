@@ -12,6 +12,8 @@ public class AttackSequenceAnimation : MonoBehaviour
     private bool moveBack;
     private Vector3 playerPos, enemyPos;
     private int count;
+    private int combatCount;
+    private GameObject UI;
 
     void Start()
     {
@@ -19,6 +21,7 @@ public class AttackSequenceAnimation : MonoBehaviour
         playerPos = player.transform.position;
         enemyPos = enemy.transform.position;
         count = 0;
+        //combatCount = 0;
     }
 
     void Update()
@@ -43,10 +46,11 @@ public class AttackSequenceAnimation : MonoBehaviour
         }
     }
 
-    public void animationInit(bool playerTurn)
+    public void animationInit(bool playerTurn, GameObject UI)
     {
         this.playerTurn = playerTurn;
         init = true;
+        this.UI = UI;
     }
 
     private void playerMove()
@@ -59,6 +63,7 @@ public class AttackSequenceAnimation : MonoBehaviour
                 player.GetComponent<Animator>().SetBool("isRunning", false);
                 player.GetComponent<Animator>().SetTrigger("isAttacking");
                 moveBack = true;
+                UI.GetComponent<AttackSequenceUI>().setEnemyHp("hp");
             }
             else
             {
@@ -85,6 +90,7 @@ public class AttackSequenceAnimation : MonoBehaviour
         {
             count = 0;
             playerTurn = false;
+            combatCount--;
         }
     }
 
@@ -98,6 +104,8 @@ public class AttackSequenceAnimation : MonoBehaviour
                 enemy.GetComponent<Animator>().SetBool("isRunning", false);
                 enemy.GetComponent<Animator>().SetTrigger("isAttacking");
                 moveBack = true;
+                UI.GetComponent<AttackSequenceUI>().setPlayerHp("hp");
+
             }
             else
             {
@@ -124,6 +132,7 @@ public class AttackSequenceAnimation : MonoBehaviour
         {
             count = 0;
             playerTurn = true;
+            combatCount--;
         }
     }
 
@@ -132,5 +141,25 @@ public class AttackSequenceAnimation : MonoBehaviour
         float distance;
         distance = Vector3.Distance(player.transform.position, enemy.transform.position);
         return (distance);
+    }
+
+    public int getCombatCount()
+    {
+        return (combatCount);
+    }
+
+    public void setCombatCount(int combatCount)
+    {
+        this.combatCount = combatCount;
+    }
+
+    public bool getInit()
+    {
+        return (init);
+    }
+
+    private void setInit(bool init)
+    {
+        this.init = init;
     }
 }

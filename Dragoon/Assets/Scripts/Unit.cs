@@ -26,6 +26,8 @@ namespace unit
         [SerializeField] private GameObject attackSequence, attackUI;
         private bool isAttackSequence;
         private GameObject currentAttackSequence;
+        [SerializeField] private GameObject rnControl;
+        private int attacks = 0;
 
         //Run on initiation
         //Set up the sprite renderer
@@ -77,11 +79,14 @@ namespace unit
             {
                 if (!isAttackSequence)
                 {
+                    doubleOpp(target);
+                    target.GetComponent<Unit>().doubleOpp(this.gameObject);
                     currentAttackSequence = Instantiate(attackSequence);
                     attackUI.SetActive(true);
                     isAttackSequence = true;
-                    attackUI.GetComponent<AttackSequenceUI>().sequenceInit(this.gameObject, target, currentAttackSequence);
+                    attackUI.GetComponent<AttackSequenceUI>().sequenceInit(this.gameObject, target, currentAttackSequence, getAttacks() + target.GetComponent<Unit>().getAttacks());
                 }
+
                 hitCheck(target);
                 isSearching = false;
             }
@@ -411,10 +416,9 @@ namespace unit
             System.Random rand = new System.Random();
             int trueAcc = getHit(victim);
             Debug.Log(trueAcc);
-            float rn1 = (float)rand.NextDouble();
-            float rn2 = (float)rand.NextDouble();
-            float ave = ((rn1 + rn2) / 2) * 100;
+            int ave = rnControl.GetComponent<RandomNumberGenerator>().randomNumberGenerator(new int[2]);
             Debug.Log(ave);
+            attacks--;
 
             if (ave < trueAcc)
             {
@@ -423,7 +427,7 @@ namespace unit
             else
             {
                 Debug.Log("miss");
-                Reset();
+                victim.GetComponent<Unit>().checkDouble(this.gameObject);
             }
         }
 
@@ -460,14 +464,34 @@ namespace unit
             else
             {
                 Debug.Log(this.gameObject.name + " took " + damage + " damage");
+                checkDouble(opponent);
             }
+        }
 
-            if (counterAttack)
+        private void checkDouble(GameObject opponent)
+        {
+            if (getAttacks() > 0)
             {
                 isAttackSequence = true;
                 this.isSearching = true;
                 setTarget(opponent);
             }
+        }
+
+        private void doubleOpp(GameObject target)
+        {
+            int targetAtkSpd = target.GetComponent<Unit>().getAtkSpd();
+
+            if ((atkSpd - targetAtkSpd) >= 4)
+            {
+                attacks = 2;
+            }
+            else
+            {
+                attacks = 1;
+            }
+
+            Debug.Log(attacks);
         }
 
         //Getter for entities
@@ -583,6 +607,16 @@ namespace unit
         private void setHp(int hp)
         {
             this.hp = hp;
+        }
+
+        public int getAttacks()
+        {
+            return (attacks);
+        }
+
+        private void setAttacks(int attacks)
+        {
+            this.attacks = attacks;
         }
     }
 }
