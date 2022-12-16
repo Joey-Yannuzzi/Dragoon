@@ -274,10 +274,9 @@ namespace unit
         //Sets player's position to the enemy's target and calculates direction of the player
         //runs a while loop to allign the enemy on the x position of the target
         //runs similar while loop to allign to y position of the target
-        //Logic Bug: enemy has the ability to overlap a player; will fix through testing later
         //while loops stop when the position is met, or if tempMov goes to 0, because this means the enemy used up all their movement for the turn
         //finally, runs setActive() with false parameter which helps the EnemyControl script know what enemies moved, and what enemies did not move
-        //Edit: DivideByZeroException still activated even through I thought it would not; need to look more into this
+        //Edit: DivideByZeroException still activated even though I thought it would not; need to look more into this
         public void enemyMove()
         {
             GameObject[] players;
@@ -341,7 +340,17 @@ namespace unit
                 tempMov--;
             }
 
-            setActive(false);
+            if (transform.position.x == x && transform.position.y == y)
+            {
+                Debug.Log(x + ", " + y);
+                Debug.Log(transform.position);
+                isSearching = true;
+                setTarget(closest);
+            }
+            else
+            {
+                Reset(true);
+            }
         }
 
         //Enemy only script
@@ -472,7 +481,6 @@ namespace unit
             if (hp < 1)
             {
                 Debug.Log(this.gameObject.name + " died");
-                //counterAttack = false;
                 Destroy(this.gameObject);
             }
             else

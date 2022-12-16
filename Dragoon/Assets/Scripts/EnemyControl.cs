@@ -38,7 +38,12 @@ public class EnemyControl : MonoBehaviour
         {
             phaseRunning = true;
             child = this.gameObject.transform.GetChild(currentChild).gameObject;
+            Debug.Log(child + "moved");
             moveInit();
+        }
+        else if (controller.GetComponent<Controller>().getEnemyStart() && phaseRunning)
+        {
+            cycleChild();
         }
     }
     
@@ -95,6 +100,8 @@ public class EnemyControl : MonoBehaviour
     {
         setActive(true);
         phaseRunning = false;
+        currentChild = 0;
+        child = this.gameObject.transform.GetChild(currentChild).gameObject;
 
         for (int bogus = 0; bogus < count; bogus++)
         {
@@ -111,18 +118,26 @@ public class EnemyControl : MonoBehaviour
     private void moveInit()
     {
         child.GetComponent<Unit>().enemyMove();
+    }
 
-        try
+    private void cycleChild()
+    {
+        if (!child.GetComponent<Unit>().getActive() || child == null)
         {
-            currentChild++;
-            child = this.gameObject.transform.GetChild(currentChild).gameObject;
+            Debug.Log("incrementing");
             phaseRunning = false;
-        }
-        catch
-        {
-            setActive(false);
-            currentChild = 0;
-            child = this.gameObject.transform.GetChild(currentChild).gameObject;
+
+            try
+            {
+                currentChild++;
+                child = this.gameObject.transform.GetChild(currentChild).gameObject;
+            }
+            catch
+            {
+                setActive(false);
+                currentChild = 0;
+                child = this.gameObject.transform.GetChild(currentChild).gameObject;
+            }
         }
     }
 }
