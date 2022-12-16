@@ -35,12 +35,21 @@ public class AttackSequenceUI : MonoBehaviour
         try
         {
             player.GetComponent<Unit>().Reset(true);
+        }
+        catch
+        {
+            Debug.Log("attacker eliminated");
+        }
+
+        try
+        {
             enemy.GetComponent<Unit>().Reset(false);
         }
         catch
         {
             Debug.Log("target eliminated");
         }
+
         attackSequence = null;
         player = null;
         enemy = null;
