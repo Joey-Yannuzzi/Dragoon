@@ -51,7 +51,7 @@ public class Controller : MonoBehaviour
         {
             cursor.SetActive(false);
         }
-        else
+        else if (!attackUI.GetComponent<AttackSequenceUI>().getActive() && isPlayer)
         {
             cursor.SetActive(true);
         }

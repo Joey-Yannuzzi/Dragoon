@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using unit;
 
 public class AttackSequenceAnimation : MonoBehaviour
 {
@@ -12,8 +13,11 @@ public class AttackSequenceAnimation : MonoBehaviour
     private bool moveBack;
     private Vector3 playerPos, enemyPos;
     private int count;
-    private int combatCount;
+    private int playerAttacks, enemyAttacks;
     private GameObject UI;
+    private bool playerDead, enemyDead;
+    private GameObject playerUnit, enemyUnit;
+    private bool hit;
 
     void Start()
     {
@@ -21,12 +25,32 @@ public class AttackSequenceAnimation : MonoBehaviour
         playerPos = player.transform.position;
         enemyPos = enemy.transform.position;
         count = 0;
-        //combatCount = 0;
+        playerDead = false;
+        enemyDead = false;
     }
 
     void Update()
     {
-        
+        if (enemy.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("End"))
+        {
+            setEnemyAttacks(0);
+            setPlayerAttacks(0);
+        }
+
+        if (player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("End"))
+        {
+            setEnemyAttacks(0);
+            setPlayerAttacks(0);
+        }
+
+        if (UI.GetComponent<AttackSequenceUI>().getHpPlayer() < 1 && !playerDead)
+        {
+            playerDeath();
+        }
+        else if (UI.GetComponent<AttackSequenceUI>().getHpEnemy() < 1 && !enemyDead)
+        {
+            enemyDeath();
+        }
     }
 
     private void FixedUpdate()
@@ -35,22 +59,24 @@ public class AttackSequenceAnimation : MonoBehaviour
         {
             frame++;
 
-            if (frame%frameSkip == 0 && playerTurn)
+            if (frame%frameSkip == 0 && playerTurn && playerAttacks > 0)
             {
                 playerMove();
             }
-            else if (frame%frameSkip == 0 && !playerTurn)
+            else if (frame%frameSkip == 0 && !playerTurn && enemyAttacks > 0)
             {
                 enemyMove();
             }
         }
     }
 
-    public void animationInit(bool playerTurn, GameObject UI)
+    public void animationInit(bool playerTurn, GameObject UI, GameObject playerUnit, GameObject enemyUnit)
     {
         this.playerTurn = playerTurn;
         init = true;
         this.UI = UI;
+        this.playerUnit = playerUnit;
+        this.enemyUnit = enemyUnit;
     }
 
     private void playerMove()
@@ -60,13 +86,23 @@ public class AttackSequenceAnimation : MonoBehaviour
             
             if (getDistance() < distance)
             {
+                hit = playerUnit.GetComponent<Unit>().hitCheck(enemyUnit);
                 player.GetComponent<Animator>().SetBool("isRunning", false);
-                player.GetComponent<Animator>().SetTrigger("isAttacking");
                 moveBack = true;
-                UI.GetComponent<AttackSequenceUI>().setEnemyHp("hp");
+
+                if (hit)
+                {
+                    player.GetComponent<Animator>().SetTrigger("isAttacking");
+                    UI.GetComponent<AttackSequenceUI>().setEnemyHp(enemyUnit.GetComponent<Unit>().getHp());
+                }
+                else
+                {
+                    UI.GetComponent<AttackSequenceUI>().setMiss("MISS");
+                }
             }
             else
             {
+                UI.GetComponent<AttackSequenceUI>().setMiss("");
                 player.GetComponent<Animator>().SetBool("isRunning", true);
                 player.transform.Translate(Vector3.right);
             }
@@ -90,7 +126,12 @@ public class AttackSequenceAnimation : MonoBehaviour
         {
             count = 0;
             playerTurn = false;
-            combatCount--;
+            playerAttacks--;
+
+            if (playerAttacks > enemyAttacks)
+            {
+                playerTurn = true;
+            }
         }
     }
 
@@ -101,14 +142,23 @@ public class AttackSequenceAnimation : MonoBehaviour
 
             if (getDistance() < distance)
             {
+                hit = enemyUnit.GetComponent<Unit>().hitCheck(playerUnit);
                 enemy.GetComponent<Animator>().SetBool("isRunning", false);
-                enemy.GetComponent<Animator>().SetTrigger("isAttacking");
                 moveBack = true;
-                UI.GetComponent<AttackSequenceUI>().setPlayerHp("hp");
 
+                if (hit)
+                {
+                    enemy.GetComponent<Animator>().SetTrigger("isAttacking");
+                    UI.GetComponent<AttackSequenceUI>().setPlayerHp(playerUnit.GetComponent<Unit>().getHp());
+                }
+                else
+                {
+                    UI.GetComponent<AttackSequenceUI>().setMiss("MISS");
+                }
             }
             else
             {
+                UI.GetComponent<AttackSequenceUI>().setMiss("");
                 enemy.GetComponent<Animator>().SetBool("isRunning", true);
                 enemy.transform.Translate(Vector3.left);
             }
@@ -126,14 +176,33 @@ public class AttackSequenceAnimation : MonoBehaviour
             enemy.transform.Translate(Vector3.left);
             moveBack = false;
             count++;
+ 
         }
 
         if (count == 2)
         {
             count = 0;
             playerTurn = true;
-            combatCount--;
+            enemyAttacks--;
+
+            if (enemyAttacks > playerAttacks)
+            {
+                playerTurn = false;
+            }
         }
+    }
+
+    private void playerDeath()
+    {
+        player.GetComponent<Animator>().SetTrigger("death");
+        playerDead = true;
+
+    }
+
+    private void enemyDeath()
+    {
+        enemy.GetComponent<Animator>().SetTrigger("death");
+        enemyDead = true;
     }
 
     private float getDistance()
@@ -143,14 +212,24 @@ public class AttackSequenceAnimation : MonoBehaviour
         return (distance);
     }
 
-    public int getCombatCount()
+    public int getPlayerAttacks()
     {
-        return (combatCount);
+        return (playerAttacks);
     }
 
-    public void setCombatCount(int combatCount)
+    public void setPlayerAttacks(int playerAttacks)
     {
-        this.combatCount = combatCount;
+        this.playerAttacks = playerAttacks;
+    }
+
+    public int getEnemyAttacks()
+    {
+        return (enemyAttacks);
+    }
+
+    public void setEnemyAttacks(int enemyAttacks)
+    {
+        this.enemyAttacks = enemyAttacks;
     }
 
     public bool getInit()

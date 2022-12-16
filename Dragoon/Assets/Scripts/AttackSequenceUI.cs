@@ -15,10 +15,13 @@ public class AttackSequenceUI : MonoBehaviour
     private GameObject attackSequence, player, enemy;
     private int frame;
     private bool isActive = false;
+    private int hpPlayer;
+    private int hpEnemy;
+    private int playerDam, enemyDam;
 
     private void Update()
     {
-        if (attackSequence.GetComponent<AttackSequenceAnimation>().getCombatCount() == 0 && attackSequence.GetComponent<AttackSequenceAnimation>().getInit())
+        if (attackSequence.GetComponent<AttackSequenceAnimation>().getPlayerAttacks() == 0 && attackSequence.GetComponent<AttackSequenceAnimation>().getEnemyAttacks() == 0 && attackSequence.GetComponent<AttackSequenceAnimation>().getInit())
         {
             Reset();
         }
@@ -29,29 +32,40 @@ public class AttackSequenceUI : MonoBehaviour
         this.gameObject.SetActive(false);
         Destroy(attackSequence);
         frame = 0;
+        try
+        {
+            player.GetComponent<Unit>().Reset(true);
+            enemy.GetComponent<Unit>().Reset(false);
+        }
+        catch
+        {
+            Debug.Log("target eliminated");
+        }
         attackSequence = null;
         player = null;
         enemy = null;
         setActive(false);
     }
-    public void sequenceInit(GameObject player, GameObject enemy, GameObject sequence, int attacks)
+    public void sequenceInit(GameObject player, GameObject enemy, GameObject sequence, int playerAttacks, int enemyAttacks)
     {
         this.player = player;
         this.enemy = enemy;
+        playerDam = player.GetComponent<Unit>().getDamage(enemy);
+        enemyDam = enemy.GetComponent<Unit>().getDamage(player);
         setActive(true);
         attackSequence = sequence;
         setMiss("");
         setPlayerHit("HIT: " + player.GetComponent<Unit>().getHit(enemy));
         setPlayerDmg("DMG: " + player.GetComponent<Unit>().getDamage(enemy));
         setPlayerCrit("CRT: 0");
-        setPlayerHp("HP: " + player.GetComponent<Unit>().getHp());
+        setPlayerHp(player.GetComponent<Unit>().getHp());
         setEnemyHit("HIT: " + enemy.GetComponent<Unit>().getHit(player));
         setEnemyDmg("DMG: " + enemy.GetComponent<Unit>().getDamage(player));
         setEnemyCrit("CRT: 0");
-        setEnemyHp("HP: " + enemy.GetComponent<Unit>().getHp());
-        attackSequence.GetComponent<AttackSequenceAnimation>().setCombatCount(attacks);
-        attackSequence.GetComponent<AttackSequenceAnimation>().animationInit(true, this.gameObject);
-        attackSequence.GetComponent<AttackSequenceAnimation>().setCombatCount(attacks);
+        setEnemyHp(enemy.GetComponent<Unit>().getHp());
+        attackSequence.GetComponent<AttackSequenceAnimation>().setPlayerAttacks(playerAttacks);
+        attackSequence.GetComponent<AttackSequenceAnimation>().setEnemyAttacks(enemyAttacks);
+        attackSequence.GetComponent<AttackSequenceAnimation>().animationInit(true, this.gameObject, player, enemy);
     }
 
     public bool getActive()
@@ -69,7 +83,7 @@ public class AttackSequenceUI : MonoBehaviour
         return (miss);
     }
 
-    private void setMiss(string miss)
+    public void setMiss(string miss)
     {
         this.miss.text = miss;
     }
@@ -109,16 +123,10 @@ public class AttackSequenceUI : MonoBehaviour
         return (playerHp);
     }
 
-    public void setPlayerHp(string playerHp)
+    public void setPlayerHp(int playerHp)
     {
-        try
-        {
-            this.playerHp.text = "HP: " + player.GetComponent<Unit>().getHp();
-        }
-        catch
-        {
-            this.playerHp.text = "HP: 0";
-        }
+        hpPlayer = playerHp;
+        this.playerHp.text = "HP: " + playerHp;
     }
 
     private TextMeshProUGUI getEnemyHit()
@@ -156,15 +164,19 @@ public class AttackSequenceUI : MonoBehaviour
         return (enemyHp);
     }
 
-    public void setEnemyHp(string enemyHp)
+    public void setEnemyHp(int enemyHp)
     {
-        try
-        {
-            this.enemyHp.text = "HP: " + enemy.GetComponent<Unit>().getHp();
-        }
-        catch
-        {
-            this.enemyHp.text = "HP: 0";
-        }
+        hpEnemy = enemyHp;
+        this.enemyHp.text = "HP: " + enemyHp;
+    }
+
+    public int getHpPlayer()
+    {
+        return (hpPlayer);
+    }
+
+    public int getHpEnemy()
+    {
+        return (hpEnemy);
     }
 }

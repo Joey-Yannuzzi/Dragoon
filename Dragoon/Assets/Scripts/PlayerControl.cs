@@ -18,6 +18,14 @@ public class PlayerControl : MonoBehaviour
         setActive(true);
     }
 
+    private void Update()
+    {
+        if (count < 1)
+        {
+            Debug.Log("Game Over");
+        }
+    }
+
     //Runs at the end of every frame
     //Sets the count equal to the number of children, just in case one of the players died during the frame's calculations
     //Runs the checkCount method
