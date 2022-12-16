@@ -84,10 +84,10 @@ namespace unit
                     currentAttackSequence = Instantiate(attackSequence);
                     attackUI.SetActive(true);
                     isAttackSequence = true;
-                    attackUI.GetComponent<AttackSequenceUI>().sequenceInit(this.gameObject, target, currentAttackSequence, getAttacks() + target.GetComponent<Unit>().getAttacks());
+                    attackUI.GetComponent<AttackSequenceUI>().sequenceInit(this.gameObject, target, currentAttackSequence, getAttacks(), target.GetComponent<Unit>().getAttacks());
                 }
 
-                hitCheck(target);
+                //hitCheck(target);
                 isSearching = false;
             }
         }
@@ -226,7 +226,7 @@ namespace unit
 
             if (!isAttack)
             {
-                Reset();
+                Reset(true);
             }
             else
             {
@@ -253,13 +253,17 @@ namespace unit
         //Runs killAll method
         //Sets the target to null
         //Sets isActive to false
-        private void Reset()
+        public void Reset(bool initiated)
         {
             killAll();
             setTarget(null);
-            setActive(false);
             isAttackSequence = false;
             currentAttackSequence = null;
+
+            if (initiated)
+            {
+                setActive(false);
+            }
         }
 
         //Enemy only script
@@ -357,13 +361,21 @@ namespace unit
             double tempDistance = 0;
             GameObject player = null;
             GameObject tempPlayer = null;
+            bool exists = true;
 
             for (int bogus = 0; bogus < players.Length + 1; bogus++)
             {
                 if (bogus == 1)
                 {
-                    player = players[bogus];
-                    distance = Math.Sqrt(Math.Pow(this.gameObject.transform.position.x - player.transform.position.x, 2) + Math.Pow(this.gameObject.transform.position.y - player.transform.position.y, 2));
+                    try
+                    {
+                        player = players[bogus];
+                        distance = Math.Sqrt(Math.Pow(this.gameObject.transform.position.x - player.transform.position.x, 2) + Math.Pow(this.gameObject.transform.position.y - player.transform.position.y, 2));
+                    }
+                    catch
+                    {
+                        exists = false;
+                    }
                 }
 
                 if (bogus > 0)
@@ -371,7 +383,7 @@ namespace unit
                     tempPlayer = players[bogus - 1];
                     tempDistance = Math.Sqrt(Math.Pow(this.gameObject.transform.position.x - tempPlayer.transform.position.x, 2) + Math.Pow(this.gameObject.transform.position.y - tempPlayer.transform.position.y, 2));
 
-                    if (tempDistance < distance)
+                    if (tempDistance < distance || !exists)
                     {
                         distance = tempDistance;
                         player = tempPlayer;
@@ -411,7 +423,7 @@ namespace unit
         //If the average is less than trueAcc, the attack hits, and damage() runs
         //If not, the attack misses
         //Visual Bug: attack sequence does not play, as it has not been implemented or created yet, therefore, animations are immidiate (or as fast as the computer can calculate)
-        private void hitCheck(GameObject victim)
+        public bool hitCheck(GameObject victim)
         {
             System.Random rand = new System.Random();
             int trueAcc = getHit(victim);
@@ -419,15 +431,18 @@ namespace unit
             int ave = rnControl.GetComponent<RandomNumberGenerator>().randomNumberGenerator(new int[2]);
             Debug.Log(ave);
             attacks--;
+            //Reset(true);
 
             if (ave < trueAcc)
             {
                 damage(victim);
+                return (true);
             }
             else
             {
                 Debug.Log("miss");
-                victim.GetComponent<Unit>().checkDouble(this.gameObject);
+                //victim.GetComponent<Unit>().checkDouble(this.gameObject);
+                return (false);
             }
         }
 
@@ -444,7 +459,6 @@ namespace unit
             }
 
             victim.GetComponent<Unit>().takeDamage(damage, this.gameObject);
-            Reset();
         }
 
         //Subtracts damage from current hp
@@ -458,13 +472,13 @@ namespace unit
             if (hp < 1)
             {
                 Debug.Log(this.gameObject.name + " died");
-                counterAttack = false;
+                //counterAttack = false;
                 Destroy(this.gameObject);
             }
             else
             {
                 Debug.Log(this.gameObject.name + " took " + damage + " damage");
-                checkDouble(opponent);
+                //checkDouble(opponent);
             }
         }
 
@@ -600,6 +614,11 @@ namespace unit
         //Getter for hp
         public int getHp()
         {
+            if (hp < 0)
+            {
+                hp = 0;
+            }
+
             return (hp);
         }
 

@@ -940,11 +940,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2298302115130126828, guid: 692b16fa28d32684b96afba0fd7dcba2, type: 3}
       propertyPath: spd
-      value: 1
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2298302115130126828, guid: 692b16fa28d32684b96afba0fd7dcba2, type: 3}
       propertyPath: str
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2298302115130126828, guid: 692b16fa28d32684b96afba0fd7dcba2, type: 3}
       propertyPath: attackUI
@@ -31201,7 +31201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2298302115130126828, guid: 692b16fa28d32684b96afba0fd7dcba2, type: 3}
       propertyPath: def
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2298302115130126828, guid: 692b16fa28d32684b96afba0fd7dcba2, type: 3}
       propertyPath: lck
@@ -31213,11 +31213,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2298302115130126828, guid: 692b16fa28d32684b96afba0fd7dcba2, type: 3}
       propertyPath: spd
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2298302115130126828, guid: 692b16fa28d32684b96afba0fd7dcba2, type: 3}
       propertyPath: str
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2298302115130126828, guid: 692b16fa28d32684b96afba0fd7dcba2, type: 3}
       propertyPath: attackUI
@@ -43747,7 +43747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 482744193869336330, guid: ecd7d270977f07e43b10bc4e3f0bc028, type: 3}
       propertyPath: skl
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 482744193869336330, guid: ecd7d270977f07e43b10bc4e3f0bc028, type: 3}
       propertyPath: spd
@@ -43844,15 +43844,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2298302115130126828, guid: 692b16fa28d32684b96afba0fd7dcba2, type: 3}
       propertyPath: skl
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2298302115130126828, guid: 692b16fa28d32684b96afba0fd7dcba2, type: 3}
       propertyPath: spd
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2298302115130126828, guid: 692b16fa28d32684b96afba0fd7dcba2, type: 3}
       propertyPath: str
-      value: 1
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2298302115130126828, guid: 692b16fa28d32684b96afba0fd7dcba2, type: 3}
       propertyPath: attackUI
