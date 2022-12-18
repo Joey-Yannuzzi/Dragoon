@@ -12,6 +12,7 @@ public class EnemyControl : MonoBehaviour
     private bool phaseRunning;
     private GameObject child;
     private int currentChild;
+    private bool playerWin = false;
 
     //Runs on initiation
     //sets currentChild equal to 0
@@ -34,6 +35,10 @@ public class EnemyControl : MonoBehaviour
     //Run moveInit method
     void Update()
     {
+        if (count < 1)
+        {
+            playerWin = true;
+        }
         if (controller.GetComponent<Controller>().getEnemyStart()  && !phaseRunning)
         {
             phaseRunning = true;
@@ -139,5 +144,10 @@ public class EnemyControl : MonoBehaviour
                 child = this.gameObject.transform.GetChild(currentChild).gameObject;
             }
         }
+    }
+
+    public bool getWin()
+    {
+        return (playerWin);
     }
 }

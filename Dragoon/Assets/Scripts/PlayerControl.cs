@@ -8,6 +8,7 @@ public class PlayerControl : MonoBehaviour
     //Variables
     private bool isActive = true;
     private int count;
+    private bool enemyWin = false;
 
     //Run on initiation
     //Sets count equal to the number of children, which is the number of player units
@@ -22,7 +23,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (count < 1)
         {
-            Debug.Log("Game Over");
+            enemyWin = true;
         }
     }
 
@@ -80,5 +81,10 @@ public class PlayerControl : MonoBehaviour
         {
             this.gameObject.transform.GetChild(bogus).gameObject.GetComponent<Unit>().setActive(true);
         }
+    }
+
+    public bool getWin()
+    {
+        return (enemyWin);
     }
 }

@@ -1628,6 +1628,10 @@ MonoBehaviour:
   enemyHp: {fileID: 1545215700521719828}
   frameRate: 60
   time: 5
+  right: {fileID: 1545215701014773454}
+  left: {fileID: 1545215701261441265}
+  rightHp: {fileID: 1545215700925405163}
+  leftHp: {fileID: 1545215700475346638}
 --- !u!1 &1545215701947575728
 GameObject:
   m_ObjectHideFlags: 0
