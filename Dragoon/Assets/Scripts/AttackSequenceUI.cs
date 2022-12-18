@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using unit;
+using UnityEngine.UI;
 
 public class AttackSequenceUI : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class AttackSequenceUI : MonoBehaviour
     private int hpPlayer;
     private int hpEnemy;
     private int playerDam, enemyDam;
+    [SerializeField] private GameObject right, left, rightHp, leftHp;
 
     private void Update()
     {
@@ -55,6 +57,25 @@ public class AttackSequenceUI : MonoBehaviour
         enemy = null;
         setActive(false);
     }
+
+    private void LateUpdate()
+    {
+        if (player.CompareTag("Player"))
+        {
+            left.GetComponent<Image>().color = Color.red;
+            leftHp.GetComponent<Image>().color = Color.red;
+            right.GetComponent<Image>().color = Color.blue;
+            rightHp.GetComponent<Image>().color = Color.blue;
+        }
+        else if (player.CompareTag("Enemy"))
+        {
+            left.GetComponent<Image>().color = Color.blue;
+            leftHp.GetComponent<Image>().color = Color.blue;
+            right.GetComponent<Image>().color = Color.red;
+            rightHp.GetComponent<Image>().color = Color.red;
+        }
+    }
+
     public void sequenceInit(GameObject player, GameObject enemy, GameObject sequence, int playerAttacks, int enemyAttacks)
     {
         this.player = player;

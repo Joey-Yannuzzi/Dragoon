@@ -18,6 +18,7 @@ public class AttackSequenceAnimation : MonoBehaviour
     private bool playerDead, enemyDead;
     private GameObject playerUnit, enemyUnit;
     private bool hit;
+    private SpriteRenderer playerRend, enemyRend;
 
     void Start()
     {
@@ -27,6 +28,8 @@ public class AttackSequenceAnimation : MonoBehaviour
         count = 0;
         playerDead = false;
         enemyDead = false;
+        playerRend = player.GetComponent<SpriteRenderer>();
+        enemyRend = enemy.GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -67,6 +70,20 @@ public class AttackSequenceAnimation : MonoBehaviour
             {
                 enemyMove();
             }
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (playerUnit.CompareTag("Player"))
+        {
+            playerRend.color = new Color(255, 255, 255);
+            enemyRend.color = new Color(255, 0, 0);
+        }
+        else if (playerUnit.CompareTag("Enemy"))
+        {
+            playerRend.color = new Color(255, 0, 0);
+            enemyRend.color = new Color(255, 255, 255);
         }
     }
 

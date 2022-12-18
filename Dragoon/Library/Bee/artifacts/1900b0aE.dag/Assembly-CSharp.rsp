@@ -384,6 +384,7 @@
 "Assets/Scripts/EnemyControl.cs"
 "Assets/Scripts/PlayerControl.cs"
 "Assets/Scripts/RandomNumberGenerator.cs"
+"Assets/Scripts/StartButton.cs"
 "Assets/Scripts/TextControl.cs"
 "Assets/Scripts/Tile.cs"
 "Assets/Scripts/Timer.cs"
