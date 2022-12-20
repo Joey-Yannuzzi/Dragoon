@@ -8,11 +8,12 @@ public class EnemyControl : MonoBehaviour
     //Variables
     private bool isActive;
     private int count;
-    public GameObject controller;
+    public GameObject controller, UI;
     private bool phaseRunning;
     private GameObject child;
     private int currentChild;
     private bool playerWin = false;
+    private bool dead;
 
     //Runs on initiation
     //sets currentChild equal to 0
@@ -46,7 +47,7 @@ public class EnemyControl : MonoBehaviour
             Debug.Log(child + "moved");
             moveInit();
         }
-        else if (controller.GetComponent<Controller>().getEnemyStart() && phaseRunning)
+        else if (controller.GetComponent<Controller>().getEnemyStart() && phaseRunning && !UI.active)
         {
             cycleChild();
         }
@@ -57,6 +58,7 @@ public class EnemyControl : MonoBehaviour
     //Checks which enemies are active and inactive at the end of each frame
     private void LateUpdate()
     {
+        //dead = child.GetComponent<Unit>().getDead();
         count = transform.childCount;
         checkCount();
     }
@@ -127,22 +129,36 @@ public class EnemyControl : MonoBehaviour
 
     private void cycleChild()
     {
-        if (!child.GetComponent<Unit>().getActive() || child == null)
+        try
         {
-            Debug.Log("incrementing");
+            if (!child.GetComponent<Unit>().getActive() || child == null)
+            {
+                phaseRunning = false;
+                deadChild();
+            }
+        }
+        catch
+        {
             phaseRunning = false;
+            //currentChild--;
+            //deadChild();
+        }
+    }
 
-            try
-            {
-                currentChild++;
-                child = this.gameObject.transform.GetChild(currentChild).gameObject;
-            }
-            catch
-            {
-                setActive(false);
-                currentChild = 0;
-                child = this.gameObject.transform.GetChild(currentChild).gameObject;
-            }
+    public void deadChild()
+    {
+        try
+        {
+            currentChild++;
+            Debug.Log(currentChild);
+            child = this.gameObject.transform.GetChild(currentChild).gameObject;
+        }
+        catch
+        {
+            Debug.Log("Aborting");
+            setActive(false);
+            currentChild = 0;
+            child = this.gameObject.transform.GetChild(currentChild).gameObject;
         }
     }
 

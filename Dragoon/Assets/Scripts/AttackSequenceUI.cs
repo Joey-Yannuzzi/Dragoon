@@ -29,7 +29,7 @@ public class AttackSequenceUI : MonoBehaviour
         }
     }
 
-    private void Reset()
+    public void Reset()
     {
         this.gameObject.SetActive(false);
         Destroy(attackSequence);
@@ -60,19 +60,26 @@ public class AttackSequenceUI : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (player.CompareTag("Player"))
+        try
         {
-            left.GetComponent<Image>().color = Color.red;
-            leftHp.GetComponent<Image>().color = Color.red;
-            right.GetComponent<Image>().color = Color.blue;
-            rightHp.GetComponent<Image>().color = Color.blue;
+            if (player.CompareTag("Player"))
+            {
+                left.GetComponent<Image>().color = Color.red;
+                leftHp.GetComponent<Image>().color = Color.red;
+                right.GetComponent<Image>().color = Color.blue;
+                rightHp.GetComponent<Image>().color = Color.blue;
+            }
+            else if (player.CompareTag("Enemy"))
+            {
+                left.GetComponent<Image>().color = Color.blue;
+                leftHp.GetComponent<Image>().color = Color.blue;
+                right.GetComponent<Image>().color = Color.red;
+                rightHp.GetComponent<Image>().color = Color.red;
+            }
         }
-        else if (player.CompareTag("Enemy"))
+        catch
         {
-            left.GetComponent<Image>().color = Color.blue;
-            leftHp.GetComponent<Image>().color = Color.blue;
-            right.GetComponent<Image>().color = Color.red;
-            rightHp.GetComponent<Image>().color = Color.red;
+
         }
     }
 
@@ -87,11 +94,11 @@ public class AttackSequenceUI : MonoBehaviour
         setMiss("");
         setPlayerHit("HIT: " + player.GetComponent<Unit>().getHit(enemy));
         setPlayerDmg("DMG: " + player.GetComponent<Unit>().getDamage(enemy));
-        setPlayerCrit("CRT: 0");
+        setPlayerCrit(player.GetComponent<Unit>().getCrit(enemy));
         setPlayerHp(player.GetComponent<Unit>().getHp());
         setEnemyHit("HIT: " + enemy.GetComponent<Unit>().getHit(player));
         setEnemyDmg("DMG: " + enemy.GetComponent<Unit>().getDamage(player));
-        setEnemyCrit("CRT: 0");
+        setEnemyCrit(enemy.GetComponent<Unit>().getCrit(player));
         setEnemyHp(enemy.GetComponent<Unit>().getHp());
         attackSequence.GetComponent<AttackSequenceAnimation>().setPlayerAttacks(playerAttacks);
         attackSequence.GetComponent<AttackSequenceAnimation>().setEnemyAttacks(enemyAttacks);
@@ -143,9 +150,9 @@ public class AttackSequenceUI : MonoBehaviour
         return (playerCrit);
     }
 
-    private void setPlayerCrit(string playerCrit)
+    private void setPlayerCrit(int playerCrit)
     {
-        this.playerCrit.text = playerCrit;
+        this.playerCrit.text = "CRT: " + playerCrit;
     }
 
     private TextMeshProUGUI getPlayerHp()
@@ -184,9 +191,9 @@ public class AttackSequenceUI : MonoBehaviour
         return (enemyCrit);
     }
 
-    private void setEnemyCrit(string enemyCrit)
+    private void setEnemyCrit(int enemyCrit)
     {
-        this.enemyCrit.text = enemyCrit;
+        this.enemyCrit.text = "CRT: "+ enemyCrit;
     }
 
     private TextMeshProUGUI getEnemyHp()
@@ -209,4 +216,6 @@ public class AttackSequenceUI : MonoBehaviour
     {
         return (hpEnemy);
     }
+
+
 }
