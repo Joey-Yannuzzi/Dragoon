@@ -113,6 +113,10 @@ public class CursorSet : MonoBehaviour
         {
             isEnemy = true;
         }
+        else if (collision.gameObject.CompareTag("Move"))
+        {
+            isRange = true;
+        }
     }
 
     //Called the frame the cursor leaves a collider

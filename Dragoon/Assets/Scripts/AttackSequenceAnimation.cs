@@ -36,14 +36,14 @@ public class AttackSequenceAnimation : MonoBehaviour
     {
         if (enemy.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("End"))
         {
-            setEnemyAttacks(0);
-            setPlayerAttacks(0);
+            UI.GetComponent<AttackSequenceUI>().Reset();
         }
 
         if (player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("End"))
         {
-            setEnemyAttacks(0);
-            setPlayerAttacks(0);
+            UI.GetComponent<AttackSequenceUI>().Reset();
+            //setEnemyAttacks(0);
+            //setPlayerAttacks(0);
         }
 
         if (UI.GetComponent<AttackSequenceUI>().getHpPlayer() < 1 && !playerDead)
@@ -75,15 +75,22 @@ public class AttackSequenceAnimation : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (playerUnit.CompareTag("Player"))
+        try
         {
-            playerRend.color = new Color(255, 255, 255);
-            enemyRend.color = new Color(255, 0, 0);
+            if (playerUnit.CompareTag("Player"))
+            {
+                playerRend.color = new Color(255, 255, 255);
+                enemyRend.color = new Color(255, 0, 0);
+            }
+            else if (playerUnit.CompareTag("Enemy"))
+            {
+                playerRend.color = new Color(255, 0, 0);
+                enemyRend.color = new Color(255, 255, 255);
+            }
         }
-        else if (playerUnit.CompareTag("Enemy"))
+        catch
         {
-            playerRend.color = new Color(255, 0, 0);
-            enemyRend.color = new Color(255, 255, 255);
+
         }
     }
 

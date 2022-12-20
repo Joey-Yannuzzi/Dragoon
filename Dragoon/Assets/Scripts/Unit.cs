@@ -10,7 +10,7 @@ namespace unit
         //Variables
         public int lvl, exp, hp, str, skl, spd, lck, def, res, con, mov;
         private int attack, defense;
-        private int accuracy, avoid;
+        private int accuracy, avoid, critRate, critAvoid;
         private int maxHp;
         private int atkSpd;
         public GameObject moveSquare;
@@ -28,6 +28,8 @@ namespace unit
         private GameObject currentAttackSequence;
         [SerializeField] private GameObject rnControl;
         private int attacks = 0;
+        private bool dead = false;
+        private GameObject parent;
 
         //Run on initiation
         //Set up the sprite renderer
@@ -42,6 +44,7 @@ namespace unit
             maxHp = hp;
             target = null;
             isAttackSequence = false;
+            parent = transform.parent.gameObject;
         }
 
         //Run every frame
@@ -74,6 +77,8 @@ namespace unit
             setAtkSpd();
             setAccuracy();
             setAvoid();
+            setCritRate();
+            setCritAvoid();
 
             if (isSearching && target)
             {
@@ -434,17 +439,18 @@ namespace unit
         //Visual Bug: attack sequence does not play, as it has not been implemented or created yet, therefore, animations are immidiate (or as fast as the computer can calculate)
         public bool hitCheck(GameObject victim)
         {
-            System.Random rand = new System.Random();
             int trueAcc = getHit(victim);
             Debug.Log(trueAcc);
             int ave = rnControl.GetComponent<RandomNumberGenerator>().randomNumberGenerator(new int[2]);
+            bool crit;
             Debug.Log(ave);
             attacks--;
             //Reset(true);
 
             if (ave < trueAcc)
             {
-                damage(victim);
+                crit = critCheck(victim);
+                damage(victim, crit);
                 return (true);
             }
             else
@@ -455,10 +461,24 @@ namespace unit
             }
         }
 
+        private bool critCheck(GameObject target)
+        {
+            int trueAcc = getCrit(target);
+            int ave = rnControl.GetComponent<RandomNumberGenerator>().randomNumberGenerator(new int[2]);
+
+            if (ave < trueAcc)
+            {
+                return (true);
+            }
+
+            return (false);
+
+        }
+
         //Calculates damage done to the victim
         //less than 0 damage is not possible, and is changed back to 0 damage
         //Sends damage number to the victim so it can subtract the damage number
-        private void damage(GameObject victim)
+        private void damage(GameObject victim, bool crit)
         {
             int damage = getDamage(victim);
 
@@ -467,26 +487,32 @@ namespace unit
                 damage = 0;
             }
 
-            victim.GetComponent<Unit>().takeDamage(damage, this.gameObject);
+            victim.GetComponent<Unit>().takeDamage(damage, this.gameObject, crit);
         }
 
         //Subtracts damage from current hp
         //If hp drops below 1, unit dies
         //If not unit is still alive
         //Checks if a counter attack can happen and runs it if possible
-        public void takeDamage(int damage, GameObject opponent)
+        public void takeDamage(int damage, GameObject opponent, bool crit)
         {
+            if (crit)
+            {
+                damage *= 3;
+            }
             hp = hp - damage;
 
             if (hp < 1)
             {
-                Debug.Log(this.gameObject.name + " died");
+                if (this.gameObject.CompareTag("Enemy"))
+                {
+                    //parent.GetComponent<EnemyControl>().deadChild();
+                }
                 Destroy(this.gameObject);
             }
             else
             {
                 Debug.Log(this.gameObject.name + " took " + damage + " damage");
-                //checkDouble(opponent);
             }
         }
 
@@ -644,6 +670,48 @@ namespace unit
         private void setAttacks(int attacks)
         {
             this.attacks = attacks;
+        }
+
+        private int getCritRate()
+        {
+            return (critRate);
+        }
+
+        private void setCritRate()
+        {
+            critRate = (skl + lck)/ 2;
+        }
+
+        public int getCritAvoid()
+        {
+            return (critAvoid);
+        }
+
+        private void setCritAvoid()
+        {
+            critAvoid = lck;
+        }
+
+        public int getCrit(GameObject target)
+        {
+            int crit = critRate - target.GetComponent<Unit>().getCritAvoid();
+
+            if (crit < 0)
+            {
+                crit = 0;
+            }
+
+            return (crit);
+        }
+
+        public bool getDead()
+        {
+            return (dead);
+        }
+
+        private void setDead(bool dead)
+        {
+            this.dead = dead;
         }
     }
 }

@@ -119,14 +119,17 @@ public class Controller : MonoBehaviour
 
     private void endGame(string winner)
     {
-        if (winner.Equals("Player"))
+        if (!attackUI.GetComponent<AttackSequenceUI>().getActive())
         {
-            SceneManager.LoadScene("Win", LoadSceneMode.Single);
-        }
+            if (winner.Equals("Player"))
+            {
+                SceneManager.LoadScene("Win", LoadSceneMode.Single);
+            }
 
-        else if (winner.Equals("Enemy"))
-        {
-            SceneManager.LoadScene("Lose", LoadSceneMode.Single);
+            else if (winner.Equals("Enemy"))
+            {
+                SceneManager.LoadScene("Lose", LoadSceneMode.Single);
+            }
         }
     }
 

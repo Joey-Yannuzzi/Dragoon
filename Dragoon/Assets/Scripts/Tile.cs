@@ -24,5 +24,9 @@ public class Tile : MonoBehaviour
             Instantiate(attackSquare, transform.position, new Quaternion(0, 0, 0, 0), transform.parent.transform);
             Destroy(this.gameObject);
         }
+        else if (collision.gameObject.CompareTag("Player") && collision.gameObject != transform.parent.gameObject)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
