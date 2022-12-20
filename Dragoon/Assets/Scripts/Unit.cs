@@ -404,6 +404,7 @@ namespace unit
                     }
                 }
             }
+
             return (player);
         }
 
@@ -502,16 +503,24 @@ namespace unit
             }
             hp = hp - damage;
 
-            if (hp < 1)
+            if (damage == 0 && opponent.CompareTag("Player"))
             {
-                if (this.gameObject.CompareTag("Enemy"))
+                opponent.GetComponent<Unit>().setExp(0);
+            }
+            else if (hp < 1)
+            {
+                if (opponent.CompareTag("Player"))
                 {
-                    //parent.GetComponent<EnemyControl>().deadChild();
+                    opponent.GetComponent<Unit>().setExp(2);
                 }
                 Destroy(this.gameObject);
             }
             else
             {
+                if (opponent.CompareTag("Player"))
+                {
+                    opponent.GetComponent<Unit>().setExp(1);
+                }
                 Debug.Log(this.gameObject.name + " took " + damage + " damage");
             }
         }
@@ -645,6 +654,19 @@ namespace unit
             return (damage);
         }
 
+        private void levelUp()
+        {
+            hp++;
+            maxHp++;
+            str++;
+            skl++;
+            spd++;
+            lck++;
+            def++;
+            res++;
+            Debug.Log("Leveled up");
+        }
+
         //Getter for hp
         public int getHp()
         {
@@ -712,6 +734,24 @@ namespace unit
         private void setDead(bool dead)
         {
             this.dead = dead;
+        }
+
+        private int getExp()
+        {
+            return (exp);
+        }
+
+        public void setExp(int modifier)
+        {
+            exp += 50 * modifier;
+
+            if (exp > 99)
+            {
+                exp -= 100;
+                levelUp();
+            }
+
+            Debug.Log(exp);
         }
     }
 }
