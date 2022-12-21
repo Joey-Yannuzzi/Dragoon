@@ -19,6 +19,7 @@ public class AttackSequenceAnimation : MonoBehaviour
     private GameObject playerUnit, enemyUnit;
     private bool hit;
     private SpriteRenderer playerRend, enemyRend;
+    private bool start = false;
 
     void Start()
     {
@@ -75,7 +76,7 @@ public class AttackSequenceAnimation : MonoBehaviour
 
     private void LateUpdate()
     {
-        try
+        if (start)
         {
             if (playerUnit.CompareTag("Player"))
             {
@@ -87,10 +88,8 @@ public class AttackSequenceAnimation : MonoBehaviour
                 playerRend.color = new Color(255, 0, 0);
                 enemyRend.color = new Color(255, 255, 255);
             }
-        }
-        catch
-        {
 
+            start = false;
         }
     }
 
@@ -101,6 +100,7 @@ public class AttackSequenceAnimation : MonoBehaviour
         this.UI = UI;
         this.playerUnit = playerUnit;
         this.enemyUnit = enemyUnit;
+        start = true;
     }
 
     private void playerMove()
