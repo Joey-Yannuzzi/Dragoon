@@ -355,13 +355,21 @@
 -r:"Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Hero Knight - Pixel Art/ColorSwap/ColorSwap_HeroKnight.cs"
+"Assets/Scripts/Attack.cs"
+"Assets/Scripts/AttackSequenceAnimation.cs"
+"Assets/Scripts/AttackSequenceUI.cs"
+"Assets/Scripts/CommandControl.cs"
 "Assets/Scripts/Controller.cs"
 "Assets/Scripts/CursorSet.cs"
+"Assets/Scripts/EnemyControl.cs"
 "Assets/Scripts/PlayerControl.cs"
+"Assets/Scripts/RandomNumberGenerator.cs"
+"Assets/Scripts/StartButton.cs"
 "Assets/Scripts/TextControl.cs"
 "Assets/Scripts/Tile.cs"
 "Assets/Scripts/Timer.cs"
 "Assets/Scripts/Unit.cs"
+"Assets/Scripts/Wait.cs"
 -langversion:9.0
 
 /deterministic

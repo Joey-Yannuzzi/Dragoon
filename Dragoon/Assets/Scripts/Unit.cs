@@ -198,20 +198,21 @@ namespace unit
             int loopY = (int) (y - transform.position.y);
             Vector3 xMove;
             Vector3 yMove;
-            try
+
+            if (loopX != 0)
             {
                 xMove = new Vector3(loopX / Math.Abs(loopX), 0, 0);
             }
-            catch (DivideByZeroException)
+            else
             {
                 xMove = new Vector3(0, 0, 0);
             }
 
-            try
+            if (loopY != 0)
             {
                 yMove = new Vector3(0, loopY / Math.Abs(loopY), 0);
             }
-            catch (DivideByZeroException)
+            else
             {
                 yMove = new Vector3(0, 0, 0);
             }
@@ -296,20 +297,20 @@ namespace unit
             Vector3 xMove;
             Vector3 yMove;
 
-            try
+            if (loopX != 0)
             {
                 xMove = new Vector3(loopX / Math.Abs(loopX), 0, 0);
             }
-            catch (DivideByZeroException)
+            else
             {
                 xMove = new Vector3(0, 0, 0);
             }
 
-            try
+            if (loopY != 0)
             {
                 yMove = new Vector3(0, loopY / Math.Abs(loopY), 0);
             }
-            catch (DivideByZeroException)
+            else
             {
                 yMove = new Vector3(0, 0, 0);
             }

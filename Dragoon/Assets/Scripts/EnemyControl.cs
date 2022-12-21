@@ -108,7 +108,10 @@ public class EnemyControl : MonoBehaviour
         setActive(true);
         phaseRunning = false;
         currentChild = 0;
-        child = this.gameObject.transform.GetChild(currentChild).gameObject;
+        if (transform.childCount > 0)
+        {
+            child = this.gameObject.transform.GetChild(currentChild).gameObject;
+        }
 
         for (int bogus = 0; bogus < count; bogus++)
         {
@@ -129,15 +132,15 @@ public class EnemyControl : MonoBehaviour
 
     private void cycleChild()
     {
-        try
+        if (child)
         {
-            if (!child.GetComponent<Unit>().getActive() || child == null)
+            if (!child.GetComponent<Unit>().getActive())
             {
                 phaseRunning = false;
                 deadChild();
             }
         }
-        catch
+        else
         {
             phaseRunning = false;
             //currentChild--;
@@ -147,13 +150,13 @@ public class EnemyControl : MonoBehaviour
 
     public void deadChild()
     {
-        try
+        if (currentChild < transform.childCount)
         {
             currentChild++;
             Debug.Log(currentChild);
             child = this.gameObject.transform.GetChild(currentChild).gameObject;
         }
-        catch
+        else
         {
             Debug.Log("Aborting");
             setActive(false);

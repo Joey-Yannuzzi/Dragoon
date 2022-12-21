@@ -20,6 +20,7 @@ public class AttackSequenceUI : MonoBehaviour
     private int hpEnemy;
     private int playerDam, enemyDam;
     [SerializeField] private GameObject right, left, rightHp, leftHp;
+    private bool start = false;
 
     private void Update()
     {
@@ -34,34 +35,29 @@ public class AttackSequenceUI : MonoBehaviour
         this.gameObject.SetActive(false);
         Destroy(attackSequence);
         frame = 0;
-        try
+        if (player)
         {
             player.GetComponent<Unit>().Reset(true);
         }
-        catch
-        {
-            Debug.Log("attacker eliminated");
-        }
 
-        try
+        if (enemy)
         {
             enemy.GetComponent<Unit>().Reset(false);
-        }
-        catch
-        {
-            Debug.Log("target eliminated");
         }
 
         attackSequence = null;
         player = null;
         enemy = null;
         setActive(false);
+        start = false;
     }
 
     private void LateUpdate()
     {
-        try
+        if (start)
         {
+            start = false;
+
             if (player.CompareTag("Player"))
             {
                 left.GetComponent<Image>().color = Color.red;
@@ -77,14 +73,11 @@ public class AttackSequenceUI : MonoBehaviour
                 rightHp.GetComponent<Image>().color = Color.red;
             }
         }
-        catch
-        {
-
-        }
     }
 
     public void sequenceInit(GameObject player, GameObject enemy, GameObject sequence, int playerAttacks, int enemyAttacks)
     {
+        start = true;
         this.player = player;
         this.enemy = enemy;
         playerDam = player.GetComponent<Unit>().getDamage(enemy);
