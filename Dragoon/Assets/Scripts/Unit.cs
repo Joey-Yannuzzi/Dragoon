@@ -59,13 +59,9 @@ namespace unit
         //Then runs hitCheck() and sets isSearching to false
         void Update()
         {
-            if (isActive && this.gameObject.CompareTag("Player"))
+            if (isActive)
             {
                 spriteRender.color = new Color(255, 255, 255);
-            }
-            else if (isActive && this.gameObject.CompareTag("Enemy"))
-            {
-                spriteRender.color = new Color(255, 0, 0);
             }
             else
             {
@@ -107,6 +103,7 @@ namespace unit
         //If there is an enemy or inpassable terrain, red sqaure appears in its place to signify invalid square
         public void getMoveVision()
         {
+            this.gameObject.GetComponent<Animator>().SetBool("isSelected", true);
             Vector3 tempOffset = new Vector3(0, 0, 0);
             int nonsense = 0;
             for (int bogus = 0; bogus <= mov; bogus ++)
@@ -168,6 +165,7 @@ namespace unit
         //Used to get rid of movement/attack squares
         public void killAll()
         {
+            this.gameObject.GetComponent<Animator>().SetBool("isSelected", false);
             int count = transform.childCount;
 
             for (int bogus = 0; bogus < count; bogus++)
